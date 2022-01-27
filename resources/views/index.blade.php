@@ -141,8 +141,10 @@
         {{-- main content --}}
         <div class="py-20 lg:pl-64 xl:pl-96">
             {{-- blank card --}}
-            <div class="m-4 h-64 rounded-xl overflow-hidden shadow-lg bg-blue-50">
+            <div class="flex justify-center items-center m-4 rounded-xl overflow-hidden shadow-lg bg-blue-50"
+            style="min-height: 16rem;">
                 <a href="" class="w-full h-full flex flex-col justify-center items-center"
+                style="min-height: 16rem;"
                 title="ini dibikin biar bisa di pencet, tapi ini ga bisa di pencet. cuman prototype aja :D">
                     <div class="max-w-2xl flex flex-col justify-center items-center">
                         <span class="font-bold text-3xl text-gray-600">Hemlo World</span>
@@ -151,10 +153,14 @@
             </div>
             
             {{-- pic card --}}
-            <div class="m-4 h-64 rounded-xl bg-cover bg-center overflow-hidden shadow-lg"
-            style="background-image: url('https://wallpapercave.com/wp/wp6980738.jpg')">
+            <div class="flex justify-center items-center m-4 rounded-xl bg-cover bg-center overflow-hidden shadow-lg"
+            style="
+            background-image: url('https://wallpapercave.com/wp/wp6980738.jpg');
+            min-height: 16rem;">
                 <a href="" class="w-full h-full flex flex-col justify-center items-center"
-                style="background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);" 
+                style="
+                background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+                min-height: 16rem;" 
                 title="ini dibikin biar bisa di pencet, tapi ini ga bisa di pencet. cuman prototype aja :D">
                     <div class="max-w-2xl flex flex-col justify-center items-center">
                         <span class="font-bold text-3xl text-gray-200">This Is Card</span>
@@ -163,12 +169,13 @@
             </div>
             
             {{-- paragraph card --}}
-            <div class="m-4 h-64 rounded-xl overflow-hidden shadow-lg bg-blue-50">
-                <a href="" class="w-full h-full flex flex-col justify-center items-center"
+            <div class="flex justify-center items-center m-4 rounded-xl overflow-hidden shadow-lg bg-blue-50"
+            style="min-height: 16rem;">
+                <a href="" class="w-full h-full flex flex-col justify-center items-center py-4"
                 title="ini dibikin biar bisa di pencet, tapi ini ga bisa di pencet. cuman prototype aja :D">
                     <div class="max-w-2xl flex flex-col justify-center items-center">
                         <span class="font-bold text-3xl text-gray-600">Lorem Ipsum Dolor</span>
-                        <dir class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, sapiente harum voluptatum a perferendis eos explicabo veniam dolorum eaque iste ullam voluptate aut excepturi? Voluptatum perferendis, accusamus hic nisi dolores odit aut vel dolorum, repellendus ullam eligendi ipsam voluptates, molestiae quae. Labore corporis consequatur hic dolorum veniam! Incidunt, impedit eos.</dir>
+                        <span class="text-center m-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, sapiente harum voluptatum a perferendis eos explicabo veniam dolorum eaque iste ullam voluptate aut excepturi? Voluptatum perferendis, accusamus hic nisi dolores odit aut vel dolorum, repellendus ullam eligendi ipsam voluptates, molestiae quae. Labore corporis consequatur hic dolorum veniam! Incidunt, impedit eos.</span>
                     </div>
                 </a>
             </div>
