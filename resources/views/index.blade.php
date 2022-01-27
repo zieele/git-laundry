@@ -25,6 +25,10 @@
         span {
             user-select: none;
         }
+        
+        ::-webkit-scrollbar {
+          width: 0px;
+        }
     </style>
 </head>
 <body id="body">
