@@ -36,72 +36,29 @@
     {{-- main content --}}
     <main class="w-full bg-blue-100">
         {{-- header --}}
-        <div id="nav" class="fixed h-20 w-full bg-blue-400 flex justify-center items-center lg:pl-64 xl:pl-96">
+        <div id="nav" class="fixed h-20 w-full bg-blue-400 flex justify-center items-center lg:pl-64 xl:pl-96 z-10">
             <button id="openSidebar" class="absolute left-6 h-8 w-8 rounded-full lg:hidden">
                 <span class="text-blue-50 font-bold text-2xl flex justify-center"><i class="fas fa-bars"></i></span>
             </button>
             <span id="ltext" class="text-blue-50 text-2xl">Git-Laundry</span>
             <button class="font-semibold text-blue-50 text-lg absolute right-6 hidden lg:block"><i class="fas fa-sign-out-alt"></i> Logout</button>
         </div>
-    
-        {{-- siderbar --}}
-        <div class="bg-red-800 hidden fixed z-50 w-64 lg:block  h-full">
-            <div id="bodySidebar" class="w-64 xl:w-96 h-full bg-blue-50 fixed z-50 flex flex-col text-gray-600">
-    
-                {{-- sidebar header --}}
-                <div class="flex items-center p-4 h-20 bg-gray-700 text-gray-200">
-                    <div class="h-12 w-12 bg-red-400 rounded-full mr-4"></div>
-                    <span class="text-lg font-bold">Admin</span>
-                </div>
-    
-                {{-- hyperlinnk list --}}
-                <div class="flex flex-col mt-6">
-    
-                    {{-- first category --}}
-                    <div class="mb-4">
-                        <span class="font-bold text-xl ml-2">Category 1</span>
-                        <a class="bg-blue-100 rounded-xl m-2 p-4 flex hover:bg-blue-200 duration-100">
-                            <div class="w-8"><i class="fas fa-plus"></i></div>
-                            <span class="font-semibold">Tambahkan Outlet</span>
-                        </a>
-        
-                        <a class="bg-blue-100 rounded-xl m-2 p-4 flex hover:bg-blue-200 duration-100">
-                            <div class="w-8"><i class="fas fa-user-plus"></i></div>
-                            <span class="font-semibold">Tambahkan Member</span>
-                        </a>
-        
-                        <a class="bg-blue-100 rounded-xl m-2 p-4 flex hover:bg-blue-200 duration-100">
-                            <div class="w-8"><i class="fas fa-box"></i></div>
-                            <span class="font-semibold">Tambahkan Paket</span>
-                        </a>
-                    </div>
-    
-                    {{-- second category --}}
-                    <div class="mb-4">
-                        <span class="font-bold text-xl ml-2">Category 2</span>
-                        <a class="bg-blue-100 rounded-xl m-2 p-4 flex hover:bg-blue-200 duration-100">
-                            <div class="w-8"><i class="fas fa-money-check-alt"></i></div>
-                            <span class="font-semibold">Transaction</span>
-                        </a>
-                    </div>
-    
-                </div>
-            </div>
-        </div>
 
-        {{-- phone sidebar --}}
-        <div id="sidebar" class="fixed w-full h-full duration-500 transform -translate-x-full">
-            <div id="bodySidebar" class="w-64 h-full bg-blue-50 fixed z-50 flex flex-col justify-between text-gray-600">
+        {{-- sidebar --}}
+        <div id="sidebar" class="fixed w-full h-full duration-500 transform -translate-x-full z-50 lg:block lg:-translate-x-0 lg:w-64 xl:w-96">
+            <div id="bodySidebar" class="w-64 h-full bg-blue-50 fixed flex flex-col text-gray-600 shadow-2xl lg:w-64 xl:w-96 justify-between lg:justify-start">
     
                 {{-- sidebar header --}}
                 <div class="flex items-center p-4 h-20 bg-gray-700 text-gray-200">
                     <div class="h-12 w-12 bg-red-400 rounded-full mr-2"></div>
                     <span class="text-lg font-bold">Admin</span>
-                    <button id="closeSidebar" class="absolute right-4 text-3xl h-8 w-8 flex justify-center items-center rounded-full duration-700 transform -translate-x-8 rotate-90"><i class="fas fa-times"></i></button>
+                    <button id="closeSidebar" class="absolute right-4 text-3xl h-8 w-8 flex justify-center items-center rounded-full duration-700 transform -translate-x-8 rotate-90 lg:hidden">
+                        <i class="fas fa-times"></i>
+                    </button>
                 </div>
     
                 {{-- hyperlinnk list --}}
-                <div class="h-3/4 flex flex-col">
+                <div class="flex flex-col mt-8 h-3/4 lg:h-auto">
     
                     {{-- first category --}}
                     <div class="mb-4">
@@ -134,7 +91,7 @@
                 </div>
     
                 {{-- sidebar footer --}}
-                <div class="flex items-center p-4 bg-gray-700 text-gray-200 bottom-0 lg:hidden">
+                <div class="flex items-center p-4 bg-gray-700 text-gray-200 lg:hidden">
                     <span class="font-semibold"><i class="fas fa-sign-out-alt"></i> Logout</span>
                 </div>
             </div>
@@ -145,7 +102,7 @@
         {{-- main content --}}
         <div class="py-20 lg:pl-64 xl:pl-96">
             {{-- blank card --}}
-            <div class="flex justify-center items-center m-4 rounded-xl overflow-hidden shadow-lg bg-blue-50"
+            <div class="flex justify-center items-center m-4 rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-1 duration-300 bg-blue-50"
             style="min-height: 16rem;">
                 <a href="" class="w-full h-full flex flex-col justify-center items-center"
                 style="min-height: 16rem;"
@@ -157,13 +114,13 @@
             </div>
             
             {{-- pic card --}}
-            <div class="flex justify-center items-center m-4 rounded-xl bg-cover bg-center overflow-hidden shadow-lg"
+            <div class="flex justify-center items-center m-4 rounded-xl bg-cover bg-center overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-1 duration-300"
             style="
             background-image: url('https://wallpapercave.com/wp/wp6980738.jpg');
             min-height: 16rem;">
                 <a href="" class="w-full h-full flex flex-col justify-center items-center"
                 style="
-                background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 100%);
+                background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
                 min-height: 16rem;" 
                 title="ini dibikin biar bisa di pencet, tapi ini ga bisa di pencet. cuman prototype aja :D">
                     <div class="max-w-2xl flex flex-col justify-center items-center">
@@ -173,15 +130,14 @@
             </div>
             
             {{-- paragraph card --}}
-            <div class="flex justify-center items-center m-4 rounded-xl overflow-hidden shadow-lg bg-blue-50"
+            <div class="flex justify-center items-center m-4 rounded-xl overflow-hidden shadow-md bg-blue-50"
             style="min-height: 16rem;">
-                <a href="" class="w-full h-full flex flex-col justify-center items-center py-4"
-                title="ini dibikin biar bisa di pencet, tapi ini ga bisa di pencet. cuman prototype aja :D">
+                <div class="w-full h-full flex flex-col justify-center items-center py-4">
                     <div class="max-w-2xl flex flex-col justify-center items-center">
                         <span class="font-bold text-3xl text-gray-600">Lorem Ipsum Dolor</span>
                         <span class="text-center m-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, sapiente harum voluptatum a perferendis eos explicabo veniam dolorum eaque iste ullam voluptate aut excepturi? Voluptatum perferendis, accusamus hic nisi dolores odit aut vel dolorum, repellendus ullam eligendi ipsam voluptates, molestiae quae. Labore corporis consequatur hic dolorum veniam! Incidunt, impedit eos.</span>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
     
