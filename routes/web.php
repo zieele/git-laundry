@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\TbMemberController;
+use App\Http\Controllers\TbOutletController;
+use App\Http\Controllers\TbPaketController;
+use App\Http\Controllers\TbTransaksiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::resource('/', Controller::class);
+Route::resource('/outlet', TbOutletController::class);
+Route::resource('/member', TbMemberController::class);
+Route::resource('/paket', TbPaketController::class);
+Route::resource('/transaksi', TbTransaksiController::class);

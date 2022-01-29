@@ -15,7 +15,11 @@ class TbMemberController extends Controller
      */
     public function index()
     {
-        //
+        {
+            $data['title'] = 'Member';
+        
+            return view('member/index', $data);
+        }
     }
 
     /**

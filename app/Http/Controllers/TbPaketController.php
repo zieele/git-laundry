@@ -15,7 +15,12 @@ class TbPaketController extends Controller
      */
     public function index()
     {
-        //
+        {
+            $data['title'] = 'Paket';
+        
+            return view('paket/index', $data);
+        }
+    }
     }
 
     /**

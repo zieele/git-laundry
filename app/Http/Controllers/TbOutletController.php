@@ -15,7 +15,11 @@ class TbOutletController extends Controller
      */
     public function index()
     {
-        //
+        {
+            $data['title'] = 'Outlet';
+        
+            return view('outlet/index', $data);
+        }
     }
 
     /**
