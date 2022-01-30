@@ -21,6 +21,7 @@ class CreateTbDetailTransaksisTable extends Migration
             $table->foreign('id_paket')->references('id')->on('tb_pakets');
             $table->double('qty');
             $table->text('keterangan');
+            $table->timestamps();
         });
     }
 

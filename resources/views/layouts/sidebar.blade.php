@@ -1,4 +1,4 @@
-    <div id="sidebar" class="fixed w-full h-full duration-500 transform -translate-x-full z-50 lg:block lg:-translate-x-0 lg:w-64 xl:w-96">
+    <div id="sidebar" class="fixed w-full h-full duration-500 transform -translate-x-full z-40 lg:block lg:-translate-x-0 lg:w-64 xl:w-96">
         <div id="bodySidebar" class="w-64 h-full bg-blue-50 lg:bg-white fixed flex flex-col text-gray-600 shadow-2xl lg:shadow-lg lg:w-64 xl:w-96 justify-between lg:justify-start">
 
             {{-- sidebar header --}}

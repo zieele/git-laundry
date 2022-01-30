@@ -22,13 +22,32 @@
                 font-family: 'Pacifico', cursive;
             }
 
-            span {
+            span, table, thead {
                 user-select: none;
             }
 
+            td {
+                user-select: text;
+            }
+
             ::-webkit-scrollbar {
-              width: 0px;
-              height: 0px;
+                width: 0px;
+                height: 0px;
+            }
+
+            /* firefox */
+            ::placeholder {
+                font-style: italic;
+            }
+            
+            /* internet exploler */
+            :-ms-input-placeholder {
+                font-style: italic;
+            }
+            
+            /* microsoft edge */
+            ::-ms-input-placeholder {
+                font-style: italic;
             }
         </style>
         @yield('style')
@@ -55,6 +74,15 @@
 
         @stack('script')
         <script>
+            // num only
+            function numInp(evt) {
+                var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+                if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+                    return false;
+                return true;
+            }
+
+            // sidebar
             document.getElementById("openSidebar").onclick = function() {
               document.getElementById("sidebar").classList.toggle("-translate-x-full");
               document.getElementById("closeSidebar").classList.toggle("rotate-90");

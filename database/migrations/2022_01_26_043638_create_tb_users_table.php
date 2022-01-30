@@ -21,6 +21,7 @@ class CreateTbUsersTable extends Migration
             $table->unsignedBigInteger('id_outlet');
             $table->foreign('id_outlet')->references('id')->on('tb_outlets');
             $table->enum('role', ['admin', 'kasir', 'owner']);
+            $table->timestamps();
         });
     }
 

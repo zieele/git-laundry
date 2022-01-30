@@ -20,6 +20,7 @@ class CreateTbPaketsTable extends Migration
             $table->enum('jenis', ['kiloan', 'selimut', 'bed_cover', 'kaos', 'lain']);
             $table->string('nama_paket', 100);
             $table->integer('harga');
+            $table->timestamps();
         });
     }
 

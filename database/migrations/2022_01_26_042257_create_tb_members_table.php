@@ -19,6 +19,7 @@ class CreateTbMembersTable extends Migration
             $table->text('alamat');
             $table->enum('jenis_kelamin', ['L', 'P']);
             $table->string('tlp', 15);
+            $table->timestamps();
         });
     }
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\tb_outlet;
-use App\Http\Requests\Storetb_outletRequest;
+use Illuminate\Http\Request;
 use App\Http\Requests\Updatetb_outletRequest;
 
 class TbOutletController extends Controller
@@ -16,6 +16,7 @@ class TbOutletController extends Controller
     public function index()
     {
         {
+            $data['items'] = tb_outlet::orderBy('id','desc')->paginate(10);
             $data['title'] = 'Outlet';
         
             return view('outlet/index', $data);
@@ -35,12 +36,23 @@ class TbOutletController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Storetb_outletRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Storetb_outletRequest $request)
+    public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'tlp' => 'required'
+        ]);
+        $item = new tb_outlet();
+        $item->nama = $request->nama;
+        $item->alamat = $request->alamat;
+        $item->tlp = $request->tlp;
+        $item->save();
+     
+        return redirect()->route('outlet.index')->with('success','Outlet telah ditambahkan.');
     }
 
     /**

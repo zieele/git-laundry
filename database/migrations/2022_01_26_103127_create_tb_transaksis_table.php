@@ -30,6 +30,7 @@ class CreateTbTransaksisTable extends Migration
             $table->enum('dibayar', ['dibayar', 'belum_dibayar']);
             $table->unsignedBigInteger('id_user');
             $table->foreign('id_user')->references('id')->on('tb_users');
+            $table->timestamps();
         });
     }
 
