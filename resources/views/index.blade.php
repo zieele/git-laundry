@@ -7,7 +7,7 @@
 
 @section('content')
 {{-- blank card --}}
-<div class="flex justify-center items-center m-4 rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-1 duration-300 bg-blue-50"
+<div class="flex justify-center items-center m-4 rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-1 duration-300 bg-white"
 style="min-height: 16rem;">
     <a href="" class="w-full h-full flex flex-col justify-center items-center"
     style="min-height: 16rem;"
@@ -35,7 +35,7 @@ min-height: 16rem;">
 </div>
 
 {{-- paragraph card --}}
-<div class="flex justify-center items-center m-4 rounded-xl overflow-hidden shadow-md bg-blue-50"
+<div class="flex justify-center items-center m-4 rounded-xl overflow-hidden shadow-md bg-white"
 style="min-height: 16rem;">
     <div class="w-full h-full flex flex-col justify-center items-center py-4">
         <div class="max-w-2xl flex flex-col justify-center items-center">
