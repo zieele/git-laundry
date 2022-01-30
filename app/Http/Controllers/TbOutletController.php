@@ -15,14 +15,11 @@ class TbOutletController extends Controller
      */
     public function index()
     {
-        {
-            $data['items'] = tb_outlet::orderBy('id','desc')->paginate(10);
-            $data['title'] = 'Outlet';
-        
-            return view('outlet/index', $data);
-        }
+        $data['items'] = tb_outlet::orderBy('id','desc')->paginate(10);
+        $data['title'] = 'Outlet';
+    
+        return view('outlet/index', $data);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -99,7 +96,7 @@ class TbOutletController extends Controller
         $item->tlp = $request->tlp;
         $item->save();
     
-        return redirect()->back()->with('success','Customer data was updated.');
+        return redirect()->back()->with('success','Data outlet telah diperbaharui.');
     }
 
     /**
@@ -110,6 +107,8 @@ class TbOutletController extends Controller
      */
     public function destroy(tb_outlet $tb_outlet)
     {
-        //
+        $tb_outlet->delete();
+    
+        return redirect()->back()->with('success','Data outlet telah di hapus.');
     }
 }

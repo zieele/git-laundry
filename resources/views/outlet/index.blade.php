@@ -8,7 +8,8 @@
 @section('content')
 @include('outlet.create')
 @foreach ($items as $item)
-@include('outlet.edit')
+@include('outlet.update')
+@include('outlet.delete')
 @endforeach
 {{-- tools --}}
 <div class="m-4 flex justify-between">
@@ -77,7 +78,7 @@
                 <td>{{ $item->alamat }}</td>
                 <td>{{ $item->tlp }}</td>
                 <td style="user-select: none;">
-                    <button id="showEdit{{ $item->id }}" class="font-semibold px-1 text-lg text-green-400 hover:text-green-300 duration-100">
+                    <button id="showUpdate{{ $item->id }}" class="font-semibold px-1 text-lg text-green-400 hover:text-green-300 duration-100">
                         <i class="fas fa-edit"></i>
                     </button>
                     <button id="showDelete{{ $item->id }}" class="font-semibold px-1 text-lg text-red-400 hover:text-red-300 duration-100">
