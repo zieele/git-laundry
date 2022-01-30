@@ -7,6 +7,9 @@
 
 @section('content')
 @include('outlet.create')
+@foreach ($items as $item)
+@include('outlet.edit')
+@endforeach
 {{-- tools --}}
 <div class="m-4 flex justify-between">
     {{-- create  button --}}
@@ -46,8 +49,8 @@
         </tbody>
     </table>
 </div>
-@else
 {{-- else (dapat data) --}}
+@else
 <div class="m-4 overflow-x-scroll rounded-xl shadow-xl">
     <table class="bg-white rounded-xl overflow-hidden min-w-full">
         <thead class="bg-gray-700">
@@ -72,10 +75,14 @@
                 <td>{{$i}}.</td>
                 <td>{{ $item->nama }}</td>
                 <td>{{ $item->alamat }}</td>
-                <td>{{ $item->telp }}</td>
-                <td>
-                    <a href="" class="font-semibold px-1 text-lg text-green-400 hover:text-green-300 duration-100"><i class="fas fa-edit"></i></a>
-                    <a href="" class="font-semibold px-1 text-lg text-red-400 hover:text-red-300 duration-100"><i class="fas fa-trash-alt"></i></a>
+                <td>{{ $item->tlp }}</td>
+                <td style="user-select: none;">
+                    <button id="showEdit{{ $item->id }}" class="font-semibold px-1 text-lg text-green-400 hover:text-green-300 duration-100">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button id="showDelete{{ $item->id }}" class="font-semibold px-1 text-lg text-red-400 hover:text-red-300 duration-100">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
                 </td>
             </tr>
             @php
@@ -90,17 +97,3 @@
 
       
 @endsection
-
-{{-- js script --}}
-@push('script')
-<script>
-    document.getElementById("closeCreate").onclick = function() {
-        document.getElementById("modalCreate").classList.toggle("hidden");
-        document.getElementById("body").classList.toggle("overflow-y-hidden");
-    }
-    document.getElementById("showCreate").onclick = function() {
-        document.getElementById("modalCreate").classList.toggle("hidden");
-        document.getElementById("body").classList.toggle("overflow-y-hidden");
-    }
-</script>
-@endpush

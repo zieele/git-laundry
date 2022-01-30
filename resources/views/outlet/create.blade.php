@@ -6,15 +6,15 @@
           <table>   
             <tr>
               <td><label for="nama">Nama</label></td>
-              <td><input class="outline-none shadow-md focus:shadow-xl duration-300 transform focus:-translate-y-1 w-64 my-2 ml-2 bg-white rounded-lg px-3 py-2" type="text" name="nama" id="nama" autocomplete="off" placeholder="Nama lengkap"></td>
+              <td><input class="outline-none shadow-md focus:shadow-xl duration-300 transform focus:-translate-y-1 w-64 my-2 ml-2 bg-white rounded-lg px-3 py-2" type="text" name="nama" id="nama" autocomplete="off" placeholder="Nama lengkap" required></td>
             </tr>
             <tr>
               <td><label for="alamat">Alamat</label></td>
-              <td><input class="outline-none shadow-md focus:shadow-xl duration-300 transform focus:-translate-y-1 w-64 my-2 ml-2 bg-white rounded-lg px-3 py-2" type="text" name="alamat" id="alamat" autocomplete="off" placeholder="Jalan, ..., kota, provinsi"></td>
+              <td><input class="outline-none shadow-md focus:shadow-xl duration-300 transform focus:-translate-y-1 w-64 my-2 ml-2 bg-white rounded-lg px-3 py-2" type="text" name="alamat" id="alamat" autocomplete="off" placeholder="Jalan, ..., kota, provinsi" required></td>
             </tr>
             <tr>
               <td><label for="tlp">No.Tlp</label></td>
-              <td><input class="outline-none shadow-md focus:shadow-xl duration-300 transform focus:-translate-y-1 w-64 my-2 ml-2 bg-white rounded-lg px-3 py-2" type="text" name="tlp" id="tlp" autocomplete="off" onkeypress="return numInp(event)" placeholder="0812345678"></td>
+              <td><input class="outline-none shadow-md focus:shadow-xl duration-300 transform focus:-translate-y-1 w-64 my-2 ml-2 bg-white rounded-lg px-3 py-2" type="text" name="tlp" id="tlp" autocomplete="off" onkeypress="return numInp(event)" placeholder="0812345678" required></td>
             </tr>
           </table>
           <div class="my-4 float-right">
@@ -28,3 +28,17 @@
         </div>
     </form>   
 </div>
+
+{{-- js script --}}
+@push('script')
+<script>
+    document.getElementById("closeCreate").onclick = function() {
+        document.getElementById("modalCreate").classList.toggle("hidden");
+        document.getElementById("body").classList.toggle("overflow-y-hidden");
+    }
+    document.getElementById("showCreate").onclick = function() {
+        document.getElementById("modalCreate").classList.toggle("hidden");
+        document.getElementById("body").classList.toggle("overflow-y-hidden");
+    }
+</script>
+@endpush

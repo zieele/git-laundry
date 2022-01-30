@@ -80,13 +80,26 @@ class TbOutletController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Updatetb_outletRequest  $request
+     * @param  @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\tb_outlet  $tb_outlet
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatetb_outletRequest $request, tb_outlet $tb_outlet)
+    public function update(Request $request, $tb_outlet)
     {
-        //
+        // dd($request->nama);
+        $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'tlp' => 'required'
+        ]);
+        
+        $item = tb_outlet::find($tb_outlet);
+        $item->nama = $request->nama;
+        $item->alamat = $request->alamat;
+        $item->tlp = $request->tlp;
+        $item->save();
+    
+        return redirect()->back()->with('success','Customer data was updated.');
     }
 
     /**
