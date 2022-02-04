@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\tb_outlet;
-use Illuminate\Http\Request;
-use App\Http\Requests\Updatetb_outletRequest;
+use App\Models\TbOutlet;
+use App\Http\Requests\StoreTbOutletRequest;
+use App\Http\Requests\UpdateTbOutletRequest;
 
 class TbOutletController extends Controller
 {
@@ -15,11 +15,12 @@ class TbOutletController extends Controller
      */
     public function index()
     {
-        $data['items'] = tb_outlet::orderBy('id','desc')->paginate(10);
+        $data['items'] = TbOutlet::orderBy('id','desc')->paginate(15);
         $data['title'] = 'Outlet';
     
-        return view('outlet/index', $data);
+        return view('outlet.index', $data);
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -33,32 +34,21 @@ class TbOutletController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreTbOutletRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTbOutletRequest $request)
     {
-        $request->validate([
-            'nama' => 'required',
-            'alamat' => 'required',
-            'tlp' => 'required'
-        ]);
-        $item = new tb_outlet();
-        $item->nama = $request->nama;
-        $item->alamat = $request->alamat;
-        $item->tlp = $request->tlp;
-        $item->save();
-     
-        return redirect()->route('outlet.index')->with('success','Outlet telah ditambahkan.');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\tb_outlet  $tb_outlet
+     * @param  \App\Models\TbOutlet  $tbOutlet
      * @return \Illuminate\Http\Response
      */
-    public function show(tb_outlet $tb_outlet)
+    public function show(TbOutlet $tbOutlet)
     {
         //
     }
@@ -66,10 +56,10 @@ class TbOutletController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\tb_outlet  $tb_outlet
+     * @param  \App\Models\TbOutlet  $tbOutlet
      * @return \Illuminate\Http\Response
      */
-    public function edit(tb_outlet $tb_outlet)
+    public function edit(TbOutlet $tbOutlet)
     {
         //
     }
@@ -77,38 +67,23 @@ class TbOutletController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\tb_outlet  $tb_outlet
+     * @param  \App\Http\Requests\UpdateTbOutletRequest  $request
+     * @param  \App\Models\TbOutlet  $tbOutlet
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $tb_outlet)
+    public function update(UpdateTbOutletRequest $request, TbOutlet $tbOutlet)
     {
-        // dd($request->nama);
-        $request->validate([
-            'nama' => 'required',
-            'alamat' => 'required',
-            'tlp' => 'required'
-        ]);
-        
-        $item = tb_outlet::find($tb_outlet);
-        $item->nama = $request->nama;
-        $item->alamat = $request->alamat;
-        $item->tlp = $request->tlp;
-        $item->save();
-    
-        return redirect()->back()->with('success','Data outlet telah diperbaharui.');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\tb_outlet  $tb_outlet
+     * @param  \App\Models\TbOutlet  $tbOutlet
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tb_outlet $tb_outlet)
+    public function destroy(TbOutlet $tbOutlet)
     {
-        $tb_outlet->delete();
-    
-        return redirect()->back()->with('success','Data outlet telah di hapus.');
+        //
     }
 }

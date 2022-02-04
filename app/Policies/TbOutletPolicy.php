@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
+use App\Models\TbOutlet;
 use App\Models\User;
-use App\Models\tb_outlet;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class TbOutletPolicy
@@ -25,10 +25,10 @@ class TbOutletPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\tb_outlet  $tbOutlet
+     * @param  \App\Models\TbOutlet  $tbOutlet
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, tb_outlet $tbOutlet)
+    public function view(User $user, TbOutlet $tbOutlet)
     {
         //
     }
@@ -48,10 +48,10 @@ class TbOutletPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\tb_outlet  $tbOutlet
+     * @param  \App\Models\TbOutlet  $tbOutlet
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, tb_outlet $tbOutlet)
+    public function update(User $user, TbOutlet $tbOutlet)
     {
         //
     }
@@ -60,10 +60,10 @@ class TbOutletPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\tb_outlet  $tbOutlet
+     * @param  \App\Models\TbOutlet  $tbOutlet
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, tb_outlet $tbOutlet)
+    public function delete(User $user, TbOutlet $tbOutlet)
     {
         //
     }
@@ -72,10 +72,10 @@ class TbOutletPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\tb_outlet  $tbOutlet
+     * @param  \App\Models\TbOutlet  $tbOutlet
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, tb_outlet $tbOutlet)
+    public function restore(User $user, TbOutlet $tbOutlet)
     {
         //
     }
@@ -84,10 +84,10 @@ class TbOutletPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\tb_outlet  $tbOutlet
+     * @param  \App\Models\TbOutlet  $tbOutlet
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, tb_outlet $tbOutlet)
+    public function forceDelete(User $user, TbOutlet $tbOutlet)
     {
         //
     }

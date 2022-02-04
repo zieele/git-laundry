@@ -50,7 +50,7 @@
                 font-style: italic;
             }
         </style>
-        @yield('style')
+        @stack('style')
     </head>
 
     <body id="body">

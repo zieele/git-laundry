@@ -65,7 +65,7 @@
         </thead>
         <tbody>
             @php
-                $i = ( $items->currentPage() - 1 ) * 15 + 1
+                $i = ( $items->currentPage() - 1 ) * $items->PerPage() + 1
             @endphp
             @foreach ($items as $item)
             <tr class="h-12 text-center text-gray-700
@@ -92,6 +92,10 @@
             @endforeach
         </tbody>
     </table>
+</div>
+
+<div class="m-4 rounded-xl">
+    
 </div>
 @endif
 

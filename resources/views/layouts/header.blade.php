@@ -7,5 +7,5 @@
     @else
     <a href="/" id="ltext" class="text-blue-50 text-2xl">Git-Laundry</a>
     @endif
-    <button class="font-semibold text-blue-50 text-lg absolute right-6 hidden lg:block"><i class="fas fa-sign-out-alt"></i> Logout</button>
+    <button class="font-semibold text-blue-50 text-lg absolute right-6 hidden lg:block"><i class="fas fa-sign-out-alt"></i> Log In</button>
 </div>

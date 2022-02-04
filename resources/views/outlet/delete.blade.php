@@ -1,5 +1,5 @@
 <div id="modalDelete{{ $item->id }}" class="hidden z-50 bg-black bg-opacity-30 fixed flex justify-center items-center w-screen h-screen transform -translate-y-20 lg:-translate-x-64 xl:-translate-x-96">
-    <form class="rounded-xl bg-blue-50 overflow-hidden text-gray-700" action="{{ route('outlet.destroy',$item->id) }}" method="POST">
+    {{-- <form class="rounded-xl bg-blue-50 overflow-hidden text-gray-700" action="{{ route('outlet.destroy',$item->id) }}" method="POST">
         @csrf
         @method('DELETE')
         <h1 class="text-2xl font-semibold tracking-wide text-white text-center bg-gray-700 px-8 py-4 shadow-lg">
@@ -14,7 +14,16 @@
                 <span>Submit</span>
             </button>
         </div>
-    </form>   
+    </form>    --}}
+    <form action="{{ route('outlet.destroy',$item->id) }}" method="POST">
+    
+        <button class="btn btn-primary" id="closeDelete{{ $item->id }}">Closex</button>
+
+        @csrf
+        @method('DELETE')
+
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
 </div>
 
 {{-- js script --}}

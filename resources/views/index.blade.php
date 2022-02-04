@@ -1,10 +1,5 @@
 @extends('layouts.app')
 
-{{-- css script --}}
-@section('style')
-    
-@endsection
-
 @section('content')
 {{-- blank card --}}
 <div class="flex justify-center items-center m-4 rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-1 duration-300 bg-white"
@@ -45,8 +40,3 @@ style="min-height: 16rem;">
     </div>
 </div>
 @endsection
-
-{{-- js script --}}
-@push('script')
-    
-@endpush
