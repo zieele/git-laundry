@@ -23,3 +23,4 @@ Route::resource('/outlet', TbOutletController::class);
 Route::resource('/member', TbMemberController::class);
 Route::resource('/paket', TbPaketController::class);
 Route::resource('/transaksi', TbTransaksiController::class);
+// test
