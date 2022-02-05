@@ -15,7 +15,7 @@ class TbOutletController extends Controller
      */
     public function index()
     {
-        $data['items'] = TbOutlet::orderBy('id','desc')->paginate(15);
+        $data['items'] = TbOutlet::orderBy('id','desc')->paginate(10);
         $data['title'] = 'Outlet';
     
         return view('outlet.index', $data);

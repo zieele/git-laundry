@@ -94,6 +94,22 @@
     </table>
 </div>
 
+<div class="m-4 rounded-xl overflow-hidden bg-white w-max shadow-xl flex items-center text-gray-600">
+    @if ( $items->currentPage() == 1 )
+    <span class="p-4 text-white bg-gray-400"><i class="fas fa-chevron-left"></i></span>
+    @else
+    <a class="p-4 text-white bg-gray-600" href="{{ $items->previousPageUrl() }}"><i class="fas fa-chevron-left"></i></a>
+    @endif
+
+    <span class="w-12 h-full flex justify-center items-center text-xl font-semibold">{{ $items->currentPage() }}</span>
+
+    @if ( $items->currentPage() == $items->lastPage() )
+    <span class="p-4 text-white bg-gray-400"><i class="fas fa-chevron-right"></i></span>
+    @else
+    <a class="p-4 text-white bg-gray-600" href="{{ $items->nextPageUrl() }}"><i class="fas fa-chevron-right"></i></a>
+    @endif
+</div>
+
 <div class="m-4 rounded-xl">
     
 </div>
