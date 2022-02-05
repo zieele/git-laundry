@@ -101,7 +101,21 @@
     <a class="p-4 text-white bg-gray-600" href="{{ $items->previousPageUrl() }}"><i class="fas fa-chevron-left"></i></a>
     @endif
 
-    <span class="w-12 h-full flex justify-center items-center text-xl font-semibold">{{ $items->currentPage() }}</span>
+    <div class="w-28 h-full flex justify-center items-center text-xl font-semibold">
+        @if ($items->currentPage() == 1)
+        <span class="text-blue-400">1</span>
+        <div class="mx-4">...</div>
+        <span>{{ $items->lastPage() }}</span>
+        @elseif ($items->currentPage() == $items->lastPage() )
+        <span>1</span>
+        <div class="mx-4">...</div>
+        <span class="text-blue-400">{{ $items->lastPage() }}</span>
+        @else
+        <span>1</span>
+        <span class="text-blue-400 mx-4">{{ $items->currentPage() }}</span>
+        <span>{{ $items->lastPage() }}</span>
+        @endif
+    </div>
 
     @if ( $items->currentPage() == $items->lastPage() )
     <span class="p-4 text-white bg-gray-400"><i class="fas fa-chevron-right"></i></span>
