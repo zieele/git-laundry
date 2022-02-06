@@ -1,3 +1,36 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+#ltext {
+    font-family: 'Pacifico', cursive;
+}
+
+span, table, thead {
+    user-select: none;
+}
+
+td {
+    user-select: text;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+/* firefox */
+::placeholder {
+    font-style: italic;
+}
+
+/* internet exploler */
+:-ms-input-placeholder {
+    font-style: italic;
+}
+
+/* microsoft edge */
+::-ms-input-placeholder {
+    font-style: italic;
+}

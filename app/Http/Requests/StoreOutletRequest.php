@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreTbOutletRequest extends FormRequest
+class StoreOutletRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class StoreTbOutletRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,18 @@ class StoreTbOutletRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nama' => 'required',
+            'alamat' => 'required',
+            'tlp' => 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'nama.required' => 'Nama dibutuhkan.',
+            'alamat.required' => 'Alamat dibutuhkan.',
+            'tlp.required' => 'No. Telp dibutuhkan.',
         ];
     }
 }

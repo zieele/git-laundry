@@ -1,8 +1,7 @@
 <?php
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\TbOutletController;
+use App\Http\Controllers\OutletController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,5 +16,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::resource('', Controller::class);
-Route::resource('login', LoginController::class);
-Route::resource('outlet', TbOutletController::class);
+Route::resource('outlet', OutletController::class);

@@ -1,41 +1,28 @@
-<div id="modalDelete{{ $item->id }}" class="hidden z-50 bg-black bg-opacity-30 fixed flex justify-center items-center w-screen h-screen transform -translate-y-20 lg:-translate-x-64 xl:-translate-x-96">
-    {{-- <form class="rounded-xl bg-blue-50 overflow-hidden text-gray-700" action="{{ route('outlet.destroy',$item->id) }}" method="POST">
+<div id="delete-modal-{{ $item->getKey() }}"
+    class="hidden z-50 bg-black bg-opacity-30 fixed justify-center items-center w-screen h-screen transform -translate-y-20 lg:-translate-x-64 xl:-translate-x-96">
+    <form action="{{ route('outlet.destroy', $item->getKey()) }}" method="post">
         @csrf
         @method('DELETE')
-        <h1 class="text-2xl font-semibold tracking-wide text-white text-center bg-gray-700 px-8 py-4 shadow-lg">
-            Hapus data 
-            {{strtok( $item->nama , " ")}}
-        </h1>
-        <div class="py-4 flex justify-center items-center">
-            <button type="button" id="closeDelete{{ $item->id }}" class="shadow-md hover:shadow-xl px-2 py-1 rounded-lg bg-green-400 text-white hover:bg-green-300 duration-300 font-semibold transform hover:-translate-y-1">
-                <span>Cancel</span>
-            </button>
-            <button type="submit" class="shadow-md hover:shadow-xl px-2 ml-2 py-1 rounded-lg bg-red-400 text-white hover:bg-red-300 duration-300 font-semibold transform hover:-translate-y-1">
-                <span>Submit</span>
-            </button>
-        </div>
-    </form>    --}}
-    <form action="{{ route('outlet.destroy',$item->id) }}" method="POST">
-    
-        <button class="btn btn-primary" id="closeDelete{{ $item->id }}">Closex</button>
-
-        @csrf
-        @method('DELETE')
-
-        <button type="submit" class="btn btn-danger">Delete</button>
+        <button type="submit">hapus</button>
+        <button id="delete-close-{{ $item->getKey() }}" type="button">cancel</button>
     </form>
 </div>
-
-{{-- js script --}}
 @push('script')
-<script>
-    document.getElementById("closeDelete{{ $item->id }}").onclick = function() {
-        document.getElementById("modalDelete{{ $item->id }}").classList.toggle("hidden");
-        document.getElementById("body").classList.toggle("overflow-y-hidden");
-    }
-    document.getElementById("showDelete{{ $item->id }}").onclick = function() {
-        document.getElementById("modalDelete{{ $item->id }}").classList.toggle("hidden");
-        document.getElementById("body").classList.toggle("overflow-y-hidden");
-    }
-</script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () =>{
+            const body = document.querySelector('body')
+            const deleteModal{{ $item->getKey() }} = document.querySelector('#delete-modal-{{ $item->getKey() }}')
+            const deleteClose{{ $item->getKey() }} = document.querySelector('#delete-close-{{ $item->getKey() }}')
+            const deleteBtn{{ $item->getKey() }} = document.querySelector('#delete-btn-{{ $item->getKey() }}')
+
+            const deleteModalToggle = () => {
+                body.classList.toggle('overflow-y-hidden')
+                deleteModal{{ $item->getKey() }}.classList.toggle('hidden')
+                deleteModal{{ $item->getKey() }}.classList.toggle('flex')
+            }
+
+            deleteClose{{ $item->getKey() }}.addEventListener('click', deleteModalToggle)
+            deleteBtn{{ $item->getKey() }}.addEventListener('click', deleteModalToggle)
+        })
+    </script>
 @endpush

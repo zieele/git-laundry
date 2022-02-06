@@ -1,99 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>{{ $title }} | git-laundry</title>
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-        {{-- awesome font --}}
-        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<head>
+    {{-- meta tags --}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ $title ?? 'Index'}} | git-laundry</title>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-        {{-- font --}}
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    {{-- awesome font --}}
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-        {{-- style --}}
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-            #ltext {
-                font-family: 'Pacifico', cursive;
-            }
+    {{-- font --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
-            span, table, thead {
-                user-select: none;
-            }
+    {{-- css style --}}
+    @stack('style')
+</head>
 
-            td {
-                user-select: text;
-            }
+<body class="w-full bg-blue-50">
 
-            ::-webkit-scrollbar {
-                width: 0px;
-                height: 0px;
-            }
+    {{-- layouts --}}
+    @include('layouts.header')
+    @include('layouts.sidebar')
 
-            /* firefox */
-            ::placeholder {
-                font-style: italic;
-            }
-            
-            /* internet exploler */
-            :-ms-input-placeholder {
-                font-style: italic;
-            }
-            
-            /* microsoft edge */
-            ::-ms-input-placeholder {
-                font-style: italic;
-            }
-        </style>
-        @stack('style')
-    </head>
+    {{-- content --}}
+    <div class="pt-20 pb-10 lg:pl-64 xl:pl-96 min-h-screen">
+        @yield('content')
+    </div>
 
-    <body id="body">
+    @include('layouts.footer')
+    
+    {{-- js script --}}
+    @stack('script')
+</body>
 
-        {{-- main content --}}
-        <main class="w-full bg-blue-100">
-            {{-- header --}}
-            @include('layouts.header')
-
-            {{-- sidebar --}}
-            @include('layouts.sidebar')
-
-            {{-- main content --}}
-            <div class="pt-20 pb-10 lg:pl-64 xl:pl-96 min-h-screen">
-                @yield('content')
-            </div>
-
-            {{-- footer --}}
-            @include('layouts.footer')
-        </main>
-
-        @stack('script')
-        <script>
-            // num only
-            function numInp(evt) {
-                var ASCIICode = (evt.which) ? evt.which : evt.keyCode
-                if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
-                    return false;
-                return true;
-            }
-
-            // sidebar
-            document.getElementById("openSidebar").onclick = function() {
-              document.getElementById("sidebar").classList.toggle("-translate-x-full");
-              document.getElementById("closeSidebar").classList.toggle("rotate-90");
-              document.getElementById("closeSidebar").classList.toggle("-translate-x-8");
-              document.getElementById("body").classList.toggle("overflow-y-hidden");
-              }
-            document.getElementById("closeSidebar").onclick = function() {
-              document.getElementById("sidebar").classList.toggle("-translate-x-full");
-              document.getElementById("closeSidebar").classList.toggle("-translate-x-8");
-              document.getElementById("body").classList.toggle("overflow-y-hidden");
-              }
-        </script>
-    </body>
 </html>

@@ -4,7 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class TbOutletFactory extends Factory
+class OutletFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -15,8 +15,8 @@ class TbOutletFactory extends Factory
     {
         return [
             'nama' => $this->faker->name(),
-            'alamat' => $this->faker->address(),
-            'tlp' => $this->faker->phoneNumber()
+            'alamat' => $this->faker->streetAddress(),
+            'tlp' => $this->faker->e164PhoneNumber()
         ];
     }
 }

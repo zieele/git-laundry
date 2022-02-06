@@ -1,48 +1,46 @@
-<div id="modalUpdate{{ $item->id }}" class="hidden z-50 bg-black bg-opacity-30 fixed flex justify-center items-center w-screen h-screen transform -translate-y-20 lg:-translate-x-64 xl:-translate-x-96">
-    <form class="rounded-xl bg-blue-50 overflow-hidden text-gray-700" action="{{ route('outlet.update',$item->id) }}" method="POST">
+<div id="update-modal-{{ $item->getKey() }}"
+    class="hidden z-50 bg-black bg-opacity-30 fixed justify-center items-center w-screen h-screen transform -translate-y-20 lg:-translate-x-64 xl:-translate-x-96">
+    <form action="{{ route('outlet.update', $item->getKey()) }}" method="post">
         @csrf
-        @method('PUT')
-        <h1 class="text-2xl font-semibold tracking-wide text-white text-center mb-4 bg-gray-700 px-8 py-4 shadow-lg">
-            Ubah data 
-            {{strtok( $item->nama , " ")}}
-        </h1>
-        <div class="px-4 flex flex-col justify-center items-end">
-          <table>   
-            <tr>
-              <td><label for="nama">Nama</label></td>
-              <td><input class="outline-none shadow-md focus:shadow-xl duration-300 transform focus:-translate-y-1 w-64 my-2 ml-2 bg-white rounded-lg px-3 py-2" type="text" name="nama" id="nama" autocomplete="off" placeholder="Nama lengkap" value="{{ $item->nama }}" required></td>
-            </tr>
-            <tr>
-              <td><label for="alamat">Alamat</label></td>
-              <td><input class="outline-none shadow-md focus:shadow-xl duration-300 transform focus:-translate-y-1 w-64 my-2 ml-2 bg-white rounded-lg px-3 py-2" type="text" name="alamat" id="alamat" autocomplete="off" placeholder="Jalan, ..., kota, provinsi" value="{{ $item->alamat }}" required></td>
-            </tr>
-            <tr>
-              <td><label for="tlp">No.Tlp</label></td>
-              <td><input class="outline-none shadow-md focus:shadow-xl duration-300 transform focus:-translate-y-1 w-64 my-2 ml-2 bg-white rounded-lg px-3 py-2" type="text" name="tlp" id="tlp" autocomplete="off" onkeypress="return numInp(event)" placeholder="0812345678" value="{{ $item->tlp }}" required></td>
-            </tr>
-          </table>
-          <div class="my-4 float-right">
-            <button type="button" id="closeUpdate{{ $item->id }}" class="shadow-md hover:shadow-xl px-2 py-1 rounded-lg bg-red-400 text-white hover:bg-red-300 duration-300 font-semibold transform hover:-translate-y-1">
-                <span>Cancel</span>
-            </button>
-            <button type="submit" class="shadow-md hover:shadow-xl px-2 ml-2 py-1 rounded-lg bg-green-400 text-white hover:bg-green-300 duration-300 font-semibold transform hover:-translate-y-1">
-                <span>Submit</span>
-            </button>
-          </div>
+        @method('PATCH')
+    
+        <div>
+            <label for="nama">Nama</label>
+            <input type="text" name="nama" id="nama" required placeholder="Tulis Nama" value="{{ $item->nama }}" value="{{ old('nama') }}">
         </div>
-    </form>   
+    
+        <div>
+            <label for="alamat">Alamat</label>
+            <input type="text" name="alamat" id="alamat" required placeholder="Tulis Alamat" value="{{ $item->alamat }}" value="{{ old('alamat') }}">
+        </div>
+    
+        <div>
+            <label for="tlp">No. Tlp</label>
+            <input type="year" name="tlp" id="tlp" required placeholder="Tulis No. Tlp" value="{{ $item->tlp }}" value="{{ old('tlp') }}" onkeypress="return num(event)">
+        </div>
+    
+        <button type="submit">Simpan</button>
+        <button id="update-close-{{ $item->getKey() }}" type="button">cancel</button>
+    
+    </form>
 </div>
 
-{{-- js script --}}
 @push('script')
-<script>
-    document.getElementById("closeUpdate{{ $item->id }}").onclick = function() {
-        document.getElementById("modalUpdate{{ $item->id }}").classList.toggle("hidden");
-        document.getElementById("body").classList.toggle("overflow-y-hidden");
-    }
-    document.getElementById("showUpdate{{ $item->id }}").onclick = function() {
-        document.getElementById("modalUpdate{{ $item->id }}").classList.toggle("hidden");
-        document.getElementById("body").classList.toggle("overflow-y-hidden");
-    }
-</script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () =>{
+            const body = document.querySelector('body')
+            const updateModal{{ $item->getKey() }} = document.querySelector('#update-modal-{{ $item->getKey() }}')
+            const updateClose{{ $item->getKey() }} = document.querySelector('#update-close-{{ $item->getKey() }}')
+            const updateBtn{{ $item->getKey() }} = document.querySelector('#update-btn-{{ $item->getKey() }}')
+
+            const updateModalToggle = () => {
+                body.classList.toggle('overflow-y-hidden')
+                updateModal{{ $item->getKey() }}.classList.toggle('hidden')
+                updateModal{{ $item->getKey() }}.classList.toggle('flex')
+            }
+
+            updateClose{{ $item->getKey() }}.addEventListener('click', updateModalToggle)
+            updateBtn{{ $item->getKey() }}.addEventListener('click', updateModalToggle)
+        })
+    </script>
 @endpush

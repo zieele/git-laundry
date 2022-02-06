@@ -1,5 +1,5 @@
 <div id="nav" class="fixed h-20 w-full bg-blue-400 flex justify-center items-center lg:pl-64 xl:pl-96 z-10 shadow-lg">
-    <button id="openSidebar" class="absolute left-6 h-8 w-8 rounded-full lg:hidden">
+    <button id="sidebar-btn" class="absolute left-6 h-8 w-8 rounded-full lg:hidden">
         <span class="text-blue-50 font-bold text-2xl flex justify-center"><i class="fas fa-bars"></i></span>
     </button>
     @if ($title == 'Dashboard')
