@@ -15,6 +15,10 @@ td {
     user-select: text;
 }
 
+input {
+    outline: none;
+}
+
 ::-webkit-scrollbar {
     width: 0px;
     height: 0px;
