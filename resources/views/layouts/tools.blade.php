@@ -52,7 +52,7 @@
                 <div class="w-24 h-full flex justify-center items-center font-semibold">
                     @if ($items->currentPage() == 1)
                         <span class="text-blue-400 mr-2">1</span>
-                        @if ($items->currentPage() > 2)
+                        @if ($items->lastPage() > 2)
                             <span class="mx-4" id="dot-search">
                                 <input class="w-3 font-semibold" type="text" onkeypress="return num(event)"  maxlength="1" value="..." title="ga bisa di pake :D">
                             </span>
@@ -61,7 +61,7 @@
                 
                     @elseif ($items->currentPage() == $items->lastPage() )
                         <a href="?page=1" class="mr-2">1</a>
-                        @if ($items->currentPage() > 2)
+                        @if ($items->lastPage() > 2)
                             <span class="mx-4" id="dot-search">
                                 <input class="w-3 font-semibold" type="text" onkeypress="return num(event)"  maxlength="1" value="..." title="ga bisa di pake :D">
                             </span>
@@ -70,7 +70,7 @@
                 
                     @else
                         <a href="?page=1" class="mr-2">1</a>
-                        @if ($items->currentPage() > 2)
+                        @if ($items->lastPage() > 2)
                             <span class="text-blue-400 mx-4" id="dot-search">
                                 <input class="w-3 font-semibold" type="text" onkeypress="return num(event)"  maxlength="1" value="{{ $items->currentPage() }}" title="ga bisa di pake :D">
                             </span>

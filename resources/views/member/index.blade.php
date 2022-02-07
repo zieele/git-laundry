@@ -4,13 +4,13 @@
 
     {{-- CRUD Modals --}}
     @foreach ($items as $item)
-        @include('outlet.update')
-        @include('outlet.delete')
+        @include('member.update')
+        @include('member.delete')
     @endforeach
 
     {{-- Heading --}}
     <div class="flex flex-col md:flex-row m-4 min-h-max">
-        @include('outlet.create')
+        @include('member.create')
         @include('layouts.tools')
     </div>
 
@@ -21,9 +21,10 @@
                 <thead class="bg-gray-700">
                     <tr class="text-white">
                         <th class="h-10">No.</th>
-                        <th class=" border-r-2 border-gray-700">Nama</th>
-                        <th class=" border-r-2 border-gray-700">Alamat</th>
-                        <th class=" border-r-2 border-gray-700">No. Telp</th>
+                        <th class="border-r-2 border-gray-700">Nama</th>
+                        <th class="border-r-2 border-gray-700">Alamat</th>
+                        <th class="border-r-2 border-gray-700">Jenis Kelamin</th>
+                        <th class="border-r-2 border-gray-700">No. Telp</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,9 +42,10 @@
                 <thead class="bg-gray-700">
                     <tr class="text-white">
                         <th class="px-4 h-10">No.</th>
-                        <th class="px-12 border-r-2 border-gray-700">Nama</th>
-                        <th class="px-16 border-r-2 border-gray-700">Alamat</th>
-                        <th class="px-12 border-r-2 border-gray-700">No.tlp</th>
+                        <th class="border-r-2 border-gray-700">Nama</th>
+                        <th class="border-r-2 border-gray-700">Alamat</th>
+                        <th class="border-r-2 border-gray-700">Jenis Kelamin</th>
+                        <th class="border-r-2 border-gray-700">No.tlp</th>
                         <th class="px-12 w-20"></th>
                     </tr>
                 </thead>
@@ -57,6 +59,7 @@
                         <td>{{ ($items->currentpage()-1) * $items->perpage() + $loop->index + 1 }}.</td>
                         <td>{{ $item->nama }}</td>
                         <td>{{ $item->alamat }}</td>
+                        <td>{{ $item->jenis_kelamin }}</td>
                         <td>{{ $item->tlp }}</td>
                         <td style="user-select: none;">
                             <button id="update-btn-{{ $item->getKey() }}" class="font-semibold px-1 text-lg text-green-400 hover:text-green-300 duration-100">

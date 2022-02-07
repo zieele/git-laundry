@@ -15,7 +15,10 @@ class MemberController extends Controller
      */
     public function index()
     {
-        //
+        return view('member.index', [
+            'title' => 'Daftar Member',
+            'items' => Member::latest()->paginate(8)
+        ]);
     }
 
     /**
@@ -36,7 +39,9 @@ class MemberController extends Controller
      */
     public function store(StoreMemberRequest $request)
     {
-        //
+        Member::create($request->all());
+
+        return redirect()->back();
     }
 
     /**
@@ -70,7 +75,9 @@ class MemberController extends Controller
      */
     public function update(UpdateMemberRequest $request, Member $member)
     {
-        //
+        $member->update($request->all());
+
+        return redirect()->back();
     }
 
     /**
@@ -81,6 +88,8 @@ class MemberController extends Controller
      */
     public function destroy(Member $member)
     {
-        //
+        $member->delete();
+
+        return redirect()->back();
     }
 }

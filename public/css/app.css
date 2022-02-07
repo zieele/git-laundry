@@ -630,6 +630,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .cursor-pointer {
   cursor: pointer;
 }
+.appearance-none {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
 .flex-col {
   flex-direction: column;
 }
@@ -777,13 +782,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 3rem;
   padding-right: 3rem;
 }
-.px-16 {
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
+}
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 .pt-20 {
   padding-top: 5rem;

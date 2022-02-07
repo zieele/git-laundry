@@ -28,7 +28,7 @@
                 </a>
                 @endif
 
-                @if ($title == 'Member')
+                @if ($title == 'Daftar Member')
                 <a class="bg-blue-200 lg:bg-blue-100 rounded-xl m-2 p-4 flex">
                     <div class="w-8"><i class="fas fa-user-plus"></i></div>
                     <span class="font-semibold">Member</span>
