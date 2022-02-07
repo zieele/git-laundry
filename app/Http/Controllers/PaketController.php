@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Paket;
 use App\Http\Requests\StorePaketRequest;
 use App\Http\Requests\UpdatePaketRequest;
+use App\Models\Outlet;
 
 class PaketController extends Controller
 {
@@ -15,7 +16,11 @@ class PaketController extends Controller
      */
     public function index()
     {
-        //
+        return view('paket.index', [
+            'title' => 'Daftar Paket',
+            'items' => Paket::join('tb_outlet', 'tb_paket.id_outlet', '=', 'tb_outlet.id')->select('tb_paket.*', 'tb_outlet.nama')->latest()->paginate(8),
+            'outlets' => Outlet::orderBy('nama')->get()
+        ]);
     }
 
     /**
@@ -36,7 +41,9 @@ class PaketController extends Controller
      */
     public function store(StorePaketRequest $request)
     {
-        //
+        Paket::create($request->all());
+
+        return redirect()->back();
     }
 
     /**

@@ -9,6 +9,8 @@ class Outlet extends Model
 {
     use HasFactory;
 
+    protected $table = 'tb_outlet';
+
     protected $fillable = [
         'nama',
         'alamat',

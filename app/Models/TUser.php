@@ -9,6 +9,8 @@ class TUser extends Model
 {
     use HasFactory;
 
+    protected $table = 'tb_user';
+
     protected $fillable = [
         'nama',
         'username',

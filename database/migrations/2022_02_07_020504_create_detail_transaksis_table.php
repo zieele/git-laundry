@@ -13,12 +13,12 @@ class CreateDetailTransaksisTable extends Migration
      */
     public function up()
     {
-        Schema::create('detail_transaksis', function (Blueprint $table) {
+        Schema::create('tb_detail_transaksi', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_transaksi');
-            $table->foreign('id_transaksi')->references('id')->on('transaksis');
+            $table->foreign('id_transaksi')->references('id')->on('tb_transaksi');
             $table->unsignedBigInteger('id_paket');
-            $table->foreign('id_paket')->references('id')->on('pakets');
+            $table->foreign('id_paket')->references('id')->on('tb_paket');
             $table->double('qty');
             $table->text('keterangan');
             $table->timestamps();
@@ -32,6 +32,6 @@ class CreateDetailTransaksisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detail_transaksis');
+        Schema::dropIfExists('tb_detail_transaksi');
     }
 }

@@ -13,13 +13,13 @@ class CreateTransaksisTable extends Migration
      */
     public function up()
     {
-        Schema::create('transaksis', function (Blueprint $table) {
+        Schema::create('tb_transaksi', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_outlet');
-            $table->foreign('id_outlet')->references('id')->on('outlets');
+            $table->foreign('id_outlet')->references('id')->on('tb_outlet');
             $table->string('kode_invoice', 100);
             $table->unsignedBigInteger('id_member');
-            $table->foreign('id_member')->references('id')->on('members');
+            $table->foreign('id_member')->references('id')->on('tb_member');
             $table->dateTime('tgl');
             $table->dateTime('batas_waktu');
             $table->dateTime('tgl_bayar');
@@ -29,7 +29,7 @@ class CreateTransaksisTable extends Migration
             $table->enum('status', ['baru', 'proses', 'selesai', 'diambil']);
             $table->enum('dibayar', ['dibayar', 'belum_dibayar']);
             $table->unsignedBigInteger('id_user');
-            $table->foreign('id_user')->references('id')->on('t_users');
+            $table->foreign('id_user')->references('id')->on('tb_user');
             $table->timestamps();
         });
     }
@@ -41,6 +41,6 @@ class CreateTransaksisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('transaksis');
+        Schema::dropIfExists('tb_transaksi');
     }
 }

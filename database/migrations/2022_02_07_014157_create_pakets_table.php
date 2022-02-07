@@ -13,10 +13,10 @@ class CreatePaketsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pakets', function (Blueprint $table) {
+        Schema::create('tb_paket', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_outlet');
-            $table->foreign('id_outlet')->references('id')->on('outlets');
+            $table->foreign('id_outlet')->references('id')->on('tb_outlet');
             $table->enum('jenis', ['kiloan', 'selimut', 'bed_cover', 'kaos', 'lain']);
             $table->string('nama_paket', 100);
             $table->integer('harga');
@@ -31,6 +31,6 @@ class CreatePaketsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pakets');
+        Schema::dropIfExists('tb_paket');
     }
 }

@@ -13,13 +13,13 @@ class CreateTUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('t_users', function (Blueprint $table) {
+        Schema::create('tb_user', function (Blueprint $table) {
             $table->id();
             $table->string('nama', 200);
             $table->string('username', 30);
             $table->text('password');
             $table->unsignedBigInteger('id_outlet');
-            $table->foreign('id_outlet')->references('id')->on('outlets');
+            $table->foreign('id_outlet')->references('id')->on('tb_outlet');
             $table->enum('role', ['admin', 'kasir', 'owner']);
             $table->timestamps();
         });
@@ -32,6 +32,6 @@ class CreateTUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('t_users');
+        Schema::dropIfExists('tb_user');
     }
 }

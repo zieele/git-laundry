@@ -16,9 +16,17 @@
             <input class="mb-4 mt-1 outline-none shadow-md focus:shadow-xl duration-300 transform focus:-translate-y-1 w-full bg-blue-50 rounded-lg px-3 py-2" type="text" name="alamat" id="alamat" autocomplete="off" required placeholder="Tulis Alamat" value="{{ $item->alamat }}">
     
             <label class="font-semibold text-2xl text-gray-600" for="jenis_kelamin">Jenis Kelamin</label>
-            <select name="jenis_kelamin" id="jenis_kelamin" class="mb-4 mt-1 outline-none shadow-md w-full bg-blue-50 rounded-lg px-3 py-2 appearance-none" selected="{{ $item->jenis_kelamin }}">
-                <option value="L">Laki-Laki</option>
-                <option value="P">Perempuan</option>
+            <select name="jenis_kelamin" id="jenis_kelamin" class="mb-4 mt-1 outline-none shadow-md w-full bg-blue-50 rounded-lg px-3 py-2 appearance-none">
+                <option 
+                    @if ($item->jenis_kelamin == 'L')
+                        selected
+                    @endif
+                value="L">Laki-Laki</option>
+                <option 
+                    @if ($item->jenis_kelamin == 'P')
+                        selected
+                    @endif
+                value="P">Perempuan</option>
             </select>
     
             <label class="font-semibold text-lg text-gray-600" for="tlp">No. Tlp</label>

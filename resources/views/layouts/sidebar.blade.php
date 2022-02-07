@@ -40,7 +40,7 @@
                 </a>
                 @endif
 
-                @if ($title == 'Paket')
+                @if ($title == 'Daftar Paket')
                 <a class="bg-blue-200 lg:bg-blue-100 rounded-xl m-2 p-4 flex">
                     <div class="w-8"><i class="fas fa-box"></i></div>
                     <span class="font-semibold">Paket</span>
