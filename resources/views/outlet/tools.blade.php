@@ -51,25 +51,31 @@
                 {{-- Link Numbers --}}
                 <div class="w-24 h-full flex justify-center items-center font-semibold">
                     @if ($items->currentPage() == 1)
-                        <span class="text-blue-400">1</span>
-                        <span class="text-blue-400 mx-4" id="dot-search">
-                            <input class="w-3 font-semibold" type="text" onkeypress="return num(event)"  maxlength="1" value="..." title="ga bisa di pake :D">
-                        </span>
-                        <a href="?page={{ $items->lastPage() }}">{{ $items->lastPage() }}</a>
+                        <span class="text-blue-400 mr-2">1</span>
+                        @if ($items->currentPage() > 2)
+                            <span class="mx-4" id="dot-search">
+                                <input class="w-3 font-semibold" type="text" onkeypress="return num(event)"  maxlength="1" value="..." title="ga bisa di pake :D">
+                            </span>
+                        @endif
+                        <a href="?page={{ $items->lastPage() }}" class="ml-2">{{ $items->lastPage() }}</a>
                 
                     @elseif ($items->currentPage() == $items->lastPage() )
-                        <a href="?page=1">1</a>
-                        <span class="text-blue-400 mx-4" id="dot-search">
-                            <input class="w-3 font-semibold" type="text" onkeypress="return num(event)"  maxlength="1" value="..." title="ga bisa di pake :D">
-                        </span>
-                        <span class="text-blue-400">{{ $items->lastPage() }}</span>
+                        <a href="?page=1" class="mr-2">1</a>
+                        @if ($items->currentPage() > 2)
+                            <span class="mx-4" id="dot-search">
+                                <input class="w-3 font-semibold" type="text" onkeypress="return num(event)"  maxlength="1" value="..." title="ga bisa di pake :D">
+                            </span>
+                        @endif
+                        <span class="text-blue-400 ml-2">{{ $items->lastPage() }}</span>
                 
                     @else
-                        <a href="?page=1">1</a>
-                        <span class="text-blue-400 mx-4" id="dot-search">
-                            <input class="w-3 font-semibold" type="text" onkeypress="return num(event)"  maxlength="1" value="{{ $items->currentPage() }} title="ga bisa di pake :D"">
-                        </span>
-                        <a href="?page={{ $items->lastPage() }}">{{ $items->lastPage() }}</a>
+                        <a href="?page=1" class="mr-2">1</a>
+                        @if ($items->currentPage() > 2)
+                            <span class="text-blue-400 mx-4" id="dot-search">
+                                <input class="w-3 font-semibold" type="text" onkeypress="return num(event)"  maxlength="1" value="{{ $items->currentPage() }}" title="ga bisa di pake :D">
+                            </span>
+                        @endif
+                        <a href="?page={{ $items->lastPage() }}" class="ml-2">{{ $items->lastPage() }}</a>
                 
                     @endif
                 </div>

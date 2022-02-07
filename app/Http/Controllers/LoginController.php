@@ -8,7 +8,7 @@ class LoginController extends Controller
 {
     public function index()
     {
-        $data['title'] = 'Dashboard';
+        $data['title'] = 'Login';
     
         return view('login.index', $data);
     }
