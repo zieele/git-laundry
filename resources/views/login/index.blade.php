@@ -75,6 +75,9 @@
                             <td><input class="outline-none shadow-md focus:shadow-xl duration-300 transform focus:-translate-y-1 w-64 my-2 ml-2 bg-white rounded-lg px-3 py-2" type="password" name="password" id="password" autocomplete="off" placeholder="Password" required></td>
                           </tr>
                         </table>
+                        @error('email')
+                            {{ $message }}
+                        @enderror
                         <button type="submit" class="w-full h-10 shadow-md hover:shadow-xl rounded-lg bg-blue-400 text-white hover:bg-blue-300 duration-300 font-semibold transform hover:-translate-y-1 mt-4">
                             <span>Login</span>
                         </button>

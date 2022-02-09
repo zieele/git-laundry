@@ -443,6 +443,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .right-4 {
   right: 1rem;
 }
+.right-16 {
+  right: 4rem;
+}
+.right-32 {
+  right: 8rem;
+}
 .z-10 {
   z-index: 10;
 }

@@ -73,7 +73,11 @@
 
         {{-- sidebar footer --}}
         <div class="flex items-center p-4 bg-gray-700 text-gray-200 lg:hidden">
-            <span class="font-semibold"><i class="fas fa-sign-out-alt"></i> Logout</span>
+            <span class="font-semibold"><i class="fas fa-sign-out-alt"></i> Login</span>
+            <form action="logout" method="post">
+                @csrf
+                <button type="submit" class="font-semibold"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </form>
         </div>
     </div>
 </div>
