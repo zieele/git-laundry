@@ -92,13 +92,4 @@ class OutletController extends Controller
 
         return redirect()->back();
     }
-
-    public function messages()
-    {
-        return [
-            'nama.required' => 'A title is required',
-            'alamat.required' => 'A message is required',
-            'tlp.required' => 'A message is required',
-        ];
-    }
 }

@@ -51,11 +51,7 @@
                 </thead>
                 <tbody>
                     @foreach ($items as $item)
-                    <tr class="h-12 text-center text-gray-700
-                        @if ($loop->index%2 == 1)
-                            bg-blue-50
-                        @endif
-                        ">
+                    <tr class="h-12 text-center text-gray-700 {{ ( $loop->index%2 == 1) ? 'bg-blue-50' : '' }}">
                         <td>{{ ($items->currentpage()-1) * $items->perpage() + $loop->index + 1 }}.</td>
                         <td>{{ $item->nama }}</td>
                         <td>{{ $item->alamat }}</td>

@@ -88,6 +88,8 @@ class PaketController extends Controller
      */
     public function destroy(Paket $paket)
     {
-        //
+        $paket->delete();
+
+        return redirect()->back();
     }
 }

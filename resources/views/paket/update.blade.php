@@ -1,5 +1,5 @@
 <div id="update-modal-{{ $item->getKey() }}"
-    class="flex z-50 bg-black bg-opacity-30 fixed justify-center items-center w-screen h-screen transform -translate-y-20 lg:-translate-x-64 xl:-translate-x-96">
+    class="hidden z-50 bg-black bg-opacity-30 fixed justify-center items-center w-screen h-screen transform -translate-y-20 lg:-translate-x-64 xl:-translate-x-96">
     <form action="{{ route('outlet.update', $item->getKey()) }}" method="post" class="bg-white w-96 flex flex-col rounded-xl text-gray-600 p-4">
         @csrf
         @method('PATCH')
