@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <td colspan="2" class="pb-4 pt-1">
-                    <input class="outline-none shadow-md focus:shadow-xl duration-300 transform focus:-translate-y-1 w-full bg-blue-50 rounded-lg px-3 py-2" type="text" name="nama" id="nama" autocomplete="off" placeholder="Masukan Nama" value="{{ old('nama') }}">
+                    <input class="outline-none duration-300 w-full focus:bg-blue-50 bg-white border border-gray-600 rounded-lg px-3 py-2" type="text" name="nama" id="nama" autocomplete="off" placeholder="Masukan Nama" value="{{ old('nama') }}">
                 </td>
             </tr>
 
@@ -31,7 +31,7 @@
             </tr>
             <tr>
                 <td colspan="2" class="pb-4 pt-1">
-                    <input class="outline-none shadow-md focus:shadow-xl duration-300 transform focus:-translate-y-1 w-full bg-blue-50 rounded-lg px-3 py-2" type="text" name="alamat" id="alamat" autocomplete="off" placeholder="Masukan Alamat" value="{{ old('alamat') }}">
+                    <input class="outline-none duration-300 w-full focus:bg-blue-50 bg-white border border-gray-600 rounded-lg px-3 py-2" type="text" name="alamat" id="alamat" autocomplete="off" placeholder="Masukan Alamat" value="{{ old('alamat') }}">
                 </td>
             </tr>
 
@@ -47,7 +47,7 @@
             </tr>
             <tr>
                 <td colspan="2" class="pb-4 pt-1">
-                    <select name="jenis_kelamin" id="jenis_kelamin" class="outline-none shadow-md w-full bg-blue-50 rounded-lg px-3 py-2 appearance-none">
+                    <select name="jenis_kelamin" id="jenis_kelamin" class="outline-none w-full focus:bg-blue-50 bg-white border border-gray-600 duration-300 rounded-lg px-3 py-2 appearance-none">
                         <option value="L">Laki-Laki</option>
                         <option value="P">Perempuan</option>
                     </select>
@@ -66,7 +66,7 @@
             </tr>
             <tr>
                 <td colspan="2" class="pb-4 pt-1">
-                    <input class="outline-none shadow-md focus:shadow-xl duration-300 transform focus:-translate-y-1 w-full bg-blue-50 rounded-lg px-3 py-2" type="year" name="tlp" id="tlp" autocomplete="off" placeholder="Masukan No. Telp" value="{{ old('tlp') }}" onkeypress="return num(event)">
+                    <input class="outline-none duration-300 w-full focus:bg-blue-50 bg-white border border-gray-600 rounded-lg px-3 py-2" type="year" name="tlp" id="tlp" autocomplete="off" placeholder="Masukan No. Telp" value="{{ old('tlp') }}" onkeypress="return num(event)">
                 </td>
             </tr>
         </table>

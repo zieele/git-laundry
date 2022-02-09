@@ -7,7 +7,7 @@
             <span class="font-bold text-2xl">Confirm Delete?</span>
             <button id="delete-close-{{ $item->getKey() }}" type="button" class="text-xl rounded-full h-8 w-8 transform hover:rotate-90 duration-300"><i class="fas fa-times"></i></button>
         </div>
-        <div class="mx-4"><span>Jika anda menghapus data ini, maka data ini akan dihilangkan dari database.</span></div>
+        <div class="mx-4"><span>Jika anda menghapus data <span class="text-red-400 font-semibold lowercase">{{strtok( $item->nama , " ")}}</span>, maka data akan dihilangkan dari database.</span></div>
         <div class="flex justify-end items-center m-4 mt-2">
             <button class="hover:bg-gray-200 duration-100 py-2 px-4 rounded-lg font-semibold mr-2" id="delete-close-{{ $item->getKey() }}-btn" type="button">cancel</button>
             <button class="bg-red-400 hover:bg-red-300 duration-100 py-2 px-4 text-white rounded-lg font-semibold" type="submit">Hapus</button>

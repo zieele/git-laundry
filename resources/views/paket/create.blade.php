@@ -15,7 +15,7 @@
             </tr>
             <tr>
                 <td colspan="2" class="pb-4 pt-1">
-                    <select name="id_outlet" id="id_outlet" class="outline-none shadow-md w-full bg-blue-50 rounded-lg px-3 py-2 appearance-none">
+                    <select name="id_outlet" id="id_outlet" class="outline-none w-full bg-white focus:bg-blue-50 border border-gray-600 duration-300 rounded-lg px-3 py-2 appearance-none">
                         @foreach ($outlets as $item)
                             <option value="{{ $item->id }}">{{ $item->nama }}</option>
                         @endforeach
@@ -35,7 +35,7 @@
             </tr>
             <tr>
                 <td colspan="2" class="pb-4 pt-1">
-                    <select name="jenis" id="jenis" class="outline-none shadow-md w-full bg-blue-50 rounded-lg px-3 py-2 appearance-none">
+                    <select name="jenis" id="jenis" class="outline-none w-full bg-white focus:bg-blue-50 border border-gray-600 duration-300 rounded-lg px-3 py-2 appearance-none">
                         <option value="kiloan">Kiloan</option>
                         <option value="selimut">Selimut</option>
                         <option value="bed_cover">Bed Cover</option>
@@ -57,7 +57,7 @@
             </tr>
             <tr>
                 <td colspan="2" class="pb-4 pt-1">
-                    <input class="outline-none shadow-md focus:shadow-xl duration-300 transform focus:-translate-y-1 w-full bg-blue-50 rounded-lg px-3 py-2" type="text" name="nama_paket" id="nama_paket" autocomplete="off" placeholder="Masukan Nama Paket" value="{{ old('nama_paket') }}">
+                    <input class="outline-none duration-300 border border-gray-600 w-full bg-white focus:bg-blue-50 rounded-lg px-3 py-2" type="text" name="nama_paket" id="nama_paket" autocomplete="off" placeholder="Masukan Nama Paket" value="{{ old('nama_paket') }}">
                 </td>
             </tr>
 
@@ -73,7 +73,7 @@
             </tr>
             <tr>
                 <td colspan="2" class="pb-4 pt-1">
-                    <input class="outline-none shadow-md focus:shadow-xl duration-300 transform focus:-translate-y-1 w-full bg-blue-50 rounded-lg px-3 py-2" type="year" name="harga" id="harga" autocomplete="off" placeholder="Masukan Harga" value="{{ old('harga') }}" onkeypress="return num(event)">
+                    <input class="outline-none duration-300 border border-gray-600 w-full bg-white focus:bg-blue-50 rounded-lg px-3 py-2" type="year" name="harga" id="harga" autocomplete="off" placeholder="Masukan Harga" value="{{ old('harga') }}" onkeypress="return num(event)">
                 </td>
             </tr>
         </table>
