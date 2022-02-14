@@ -41,7 +41,7 @@ class OutletController extends Controller
     {
         Outlet::create($request->all());
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Data Berhasil ditambahkan.');
     }
 
     /**
@@ -77,7 +77,7 @@ class OutletController extends Controller
     {
         $outlet->update($request->all());
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Data Berhasil diubah.');
     }
 
     /**
@@ -90,6 +90,6 @@ class OutletController extends Controller
     {
         $outlet->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Data Berhasil dihapus.');;
     }
 }

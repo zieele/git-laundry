@@ -41,7 +41,7 @@ class MemberController extends Controller
     {
         Member::create($request->all());
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Data Berhasil ditambahkan.');
     }
 
     /**
@@ -77,7 +77,7 @@ class MemberController extends Controller
     {
         $member->update($request->all());
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Data Berhasil diubah.');
     }
 
     /**
@@ -90,6 +90,6 @@ class MemberController extends Controller
     {
         $member->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Data Berhasil dihapus.');
     }
 }

@@ -43,7 +43,7 @@ class PaketController extends Controller
     {
         Paket::create($request->all());
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Data Berhasil ditambahkan.');;
     }
 
     /**
@@ -77,7 +77,9 @@ class PaketController extends Controller
      */
     public function update(UpdatePaketRequest $request, Paket $paket)
     {
-        //
+        $paket->update($request->all());
+
+        return redirect()->back()->with('success','Data Berhasil diubah.');
     }
 
     /**
@@ -90,6 +92,6 @@ class PaketController extends Controller
     {
         $paket->delete();
 
-        return redirect()->back();
+        return redirect()->back()->with('success','Data Berhasil dihapus.');;
     }
 }

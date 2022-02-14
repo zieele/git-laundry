@@ -1,6 +1,6 @@
 <div id="update-modal-{{ $item->getKey() }}"
     class="hidden z-50 bg-black bg-opacity-30 fixed justify-center items-center w-screen h-screen transform -translate-y-20 lg:-translate-x-64 xl:-translate-x-96">
-    <form action="{{ route('outlet.update', $item->getKey()) }}" method="post" class="bg-white w-96 flex flex-col rounded-xl text-gray-600 p-4">
+    <form action="{{ route('paket.update', $item->getKey()) }}" method="post" class="bg-white w-96 flex flex-col rounded-xl text-gray-600 p-4">
         @csrf
         @method('PATCH')
         <div class="flex items-center justify-between mb-4">
@@ -10,12 +10,7 @@
 
         <div>
             <label class="font-semibold text-2xl text-gray-600" for="outlet">Outlet</label>
-            <select name="outlet" id="outlet" class="mb-4 mt-1 outline-none shadow-md w-full bg-blue-50 rounded-lg px-3 py-2 appearance-none">
-                    {{-- HEREEEEEEEEEEEEEEEEEEEEEEEEEE --}}
-                    {{-- @foreach ($outlets as $item)
-                        <option value="">{{ $item->nama }}</option>
-                    @endforeach --}}
-            </select>
+            <input class="mb-4 mt-1 outline-none shadow-md focus:shadow-xl duration-300 transform focus:-translate-y-1 w-full bg-blue-50 rounded-lg px-3 py-2" type="text" name="id_outlet" id="id_outlet" autocomplete="off" required placeholder="Tulis Nama Paket" value="{{ $item->id_outlet }}">
     
             <label class="font-semibold text-2xl text-gray-600" for="jenis">Jenis</label>
             <select name="jenis" id="jenis" class="mb-4 mt-1 outline-none shadow-md w-full bg-blue-50 rounded-lg px-3 py-2 appearance-none">

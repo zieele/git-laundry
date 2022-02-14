@@ -15,7 +15,10 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        //
+        return view('transaksi.index', [
+            'title' => 'Page Transaksi',
+            'items' => Transaksi::latest()->paginate(8)
+        ]);
     }
 
     /**

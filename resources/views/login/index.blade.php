@@ -54,7 +54,7 @@
     </head>
 
     <body id="body">
-
+        
         {{-- main content --}}
         <main class="w-screen h-screen" style="
         background-image: url('https://wallpapercave.com/wp/wp6980738.jpg');
@@ -76,7 +76,7 @@
                           </tr>
                         </table>
                         @error('email')
-                            {{ $message }}
+                            <span class="text-red-400">{{ $message }}</span>
                         @enderror
                         <button type="submit" class="w-full h-10 shadow-md hover:shadow-xl rounded-lg bg-blue-400 text-white hover:bg-blue-300 duration-300 font-semibold transform hover:-translate-y-1 mt-4">
                             <span>Login</span>

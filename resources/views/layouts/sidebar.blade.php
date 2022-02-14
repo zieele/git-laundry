@@ -3,8 +3,19 @@
 
         {{-- sidebar header --}}
         <div class="flex items-center p-4 h-20 bg-gray-700 text-gray-200">
-            <div class="h-12 w-12 bg-red-400 rounded-full mr-2"></div>
-            <span class="text-lg font-bold">Admin</span>
+            @if (auth()->role = 'admin')
+                <div class="h-12 w-12 bg-red-400 rounded-full mr-2"></div>
+                <span class="text-lg font-bold">Admin</span>
+            @elseif (auth()->role = 'kasir')
+                <div class="h-12 w-12 bg-yellow-400 rounded-full mr-2"></div>
+                <span class="text-lg font-bold">Kasir</span>
+            @elseif (auth()->role = 'owner')
+                <div class="h-12 w-12 bg-green-400 rounded-full mr-2"></div>
+                <span class="text-lg font-bold">Owner</span>
+            @else
+                <div class="h-12 w-12 bg-gray-400 rounded-full mr-2"></div>
+                <span class="text-lg font-bold">Guest</span>
+            @endif
             <button id="close-sidebar-btn" class="absolute right-4 text-3xl h-8 w-8 flex justify-center items-center rounded-full duration-700 transform -translate-x-8 rotate-90 lg:hidden">
                 <i class="fas fa-times"></i>
             </button>
