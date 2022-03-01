@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\OutletController;
@@ -20,17 +22,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('', Controller::class);
+Route::resource('', HomeController::class);
 Route::resource('outlet', OutletController::class);
 Route::resource('member', MemberController::class);
 Route::resource('paket', PaketController::class);
+Route::resource('barang', BarangController::class);
 
 Route::resource('transaksi', TransaksiController::class);
 
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('login', [LoginController::class, 'authenticate']);
-Route::post('logout', [LoginController::class, 'logout']);
+// Route::post('logout', [LoginController::class, 'logout']);
 
-Route::middleware(['auth'])->group(function(){
-    Route::get('home',[Controller::class,'index']);
-});
+// Route::middleware(['auth'])->group(function(){
+//     Route::get('',[HomeController::class,'index']);
+// });
+
+// Route::group(['prefix' => 'a', 'middleware' => ['isAdmin', 'auth']], function(){
+//     Route::get('', [HomeController::class, 'index'])->name('a');
+//     Route::resource('outlet', OutletController::class);
+//     Route::resource('member', MemberController::class);
+//     Route::resource('paket', PaketController::class);
+// });

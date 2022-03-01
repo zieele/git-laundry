@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+        
+{{-- {{ auth()->user() }} --}}
+
 {{-- blank card --}}
 <div class="flex justify-center items-center m-4 rounded-xl overflow-hidden shadow-md hover:shadow-xl transform hover:-translate-y-1 duration-300 bg-white"
 style="min-height: 16rem;">

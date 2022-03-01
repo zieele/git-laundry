@@ -3,11 +3,109 @@
 @section('content')
 
     {{-- Heading --}}
-    <div class="flex flex-col md:flex-row m-4 min-h-max">
-        @include('outlet.create')<div class="mt-4 md:mt-0 md:ml-4 rounded-xl w-full md:w-1/2 h-max md:h-auto flex flex-col justify-between">
+    <div class="flex flex-col m-4 min-h-max">
+        <div class="overflow-x-scroll rounded-xl shadow-xl w-full h-max">
+            <form action="{{ route('outlet.store') }}" method="post" class="bg-white rounded-xl overflow-hidden min-w-full h-full py-6 px-4 flex flex-col items-end">
+                @csrf
+        
+                <div class="flex w-full">
+                    <table class="w-full mr-2 h-min">
+                        <tr>
+                            <td>
+                                {{-- <label class="font-bold text-2xl text-gray-600" for="asdf">asdasdasd</label> --}}
+                                <span class="font-bold text-2xl text-gray-600">Member</span>
+                            </td>
+                            {{-- <td class="h-8 flex items-end justify-end">
+                                @error('asdf')
+                                    <span class="text-sm text-red-600">{{ $message }}</span>
+                                @enderror
+                            </td> --}}
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="pb-4 pt-1 flex">
+                                <button type="button" id="modalMember" class="py-2 px-5 rounded-lg bg-blue-400 text-white font-semibold hover:bg-blue-300 duration-100">Pilih</button>
+                                <input class="ml-2 outline-none focus:bg-blue-50 duration-300 w-full bg-white border border-gray-600 rounded-lg px-3 py-2" type="text" name="asdf" id="asdf" autocomplete="off" value="{{ old('asdf') }}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                {{-- <label class="font-bold text-2xl text-gray-600" for="asdf">asdasdasd</label> --}}
+                                <span class="font-bold text-2xl text-gray-600">Paket</span>
+                            </td>
+                            {{-- <td class="h-8 flex items-end justify-end">
+                                @error('asdf')
+                                    <span class="text-sm text-red-600">{{ $message }}</span>
+                                @enderror
+                            </td> --}}
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="pb-4 pt-1 flex">
+                                <button type="button" id="modalPaket" class="py-2 px-5 rounded-lg bg-blue-400 text-white font-semibold hover:bg-blue-300 duration-100">Pilih</button>
+                                <input class="ml-2 outline-none focus:bg-blue-50 duration-300 w-full bg-white border border-gray-600 rounded-lg px-3 py-2" type="text" name="asdf" id="asdf" autocomplete="off" value="{{ old('asdf') }}">
+                            </td>
+                        </tr>
+                    </table>
+            
+                    <table class="w-full ml-2">
+                        <tr>
+                            <td>
+                                <label class="font-bold text-2xl text-gray-600" for="nama">Nama</label>
+                            </td>
+                            <td class="h-8 flex items-end justify-end">
+                                @error('nama')
+                                    <span class="text-sm text-red-600">{{ $message }}</span>
+                                @enderror
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="pb-4 pt-1">
+                                <input class="outline-none focus:bg-blue-50 duration-300 w-full bg-white border border-gray-600 rounded-lg px-3 py-2" type="text" name="nama" id="nama" autocomplete="off" placeholder="Masukan Nama" value="{{ old('nama') }}">
+                            </td>
+                        </tr>
+            
+                        <tr>
+                            <td>
+                                <label class="font-bold text-2xl text-gray-600" for="alamat">Alamat</label>
+                            </td>
+                            <td class="h-8 flex items-end justify-end">
+                                @error('alamat')
+                                    <span class="text-sm text-red-600">{{ $message }}</span>
+                                @enderror
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="pb-4 pt-1">
+                                <input class="outline-none focus:bg-blue-50 duration-300 w-full bg-white border border-gray-600 rounded-lg px-3 py-2" type="text" name="alamat" id="alamat" autocomplete="off" placeholder="Masukan Alamat" value="{{ old('alamat') }}">
+                            </td>
+                        </tr>
+            
+                        <tr>
+                            <td>
+                                <label class="font-bold text-2xl text-gray-600" for="tlp">No. Telp</label>
+                            </td>
+                            <td class="h-8 flex items-end justify-end">
+                                @error('tlp')
+                                    <span class="text-sm text-red-600">{{ $message }}</span>
+                                @enderror
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="pb-4 pt-1">
+                                <input class="outline-none focus:bg-blue-50 duration-300 w-full bg-white border border-gray-600 rounded-lg px-3 py-2" type="year" name="tlp" id="tlp" autocomplete="off" placeholder="Masukan No. Telp" value="{{ old('tlp') }}" onkeypress="return num(event)">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <button class="px-3 py-2 rounded-md bg-blue-400 hover:bg-blue-300 duration-100 font-semibold text-white" type="submit">Simpan</button>
+            
+            </form>
+            
+        </div>
+        <div class="mt-4 rounded-xl w-full h-max md:h-auto flex flex-col justify-between">
 
-            {{-- Quick Button --}}
-            <div class="md:h-full bg-white shadow-xl mb-4 rounded-xl text-gray-600">
+            {{-- None --}}
+            {{-- <div class="md:h-full bg-white shadow-xl mb-4 rounded-xl text-gray-600">
                 <div class="flex items-center mt-8 ml-10">
                     <span class="mr-2 text-xl font-semibold">Status:</span>
                     <span class="font-semibold bg-green-300 py-1 px-3 rounded-full uppercase">proses</span>
@@ -16,11 +114,11 @@
                     <span class="mr-2 text-xl font-semibold">Total Bayar:</span>
                     <span class="text-2xl font-bold">Rp.100000</span>
                 </div>
-            </div>
+            </div> --}}
         
-            <div>
+            <div class="flex">
                 {{-- Search | tampilan doang :D --}}
-                <form class="w-full flex rounded-xl overflow-hidden shadow-xl transform hover:-translate-y-1 hover:shadow-2xl duration-300">
+                <form class="w-full flex rounded-xl overflow-hidden shadow-xl transform hover:-translate-y-1 hover:shadow-2xl duration-300 w-1/2">
                     <input type="text" placeholder="Search" class="w-full pl-4" title="ga bisa di pake :D">
                     <div class="bg-gray-600 w-0.5"></div>
                     <button class="text-gray-600 py-2 px-4 bg-white" title="ga bisa di pake :D"><i class="fas fa-search"></i></button>
@@ -28,7 +126,7 @@
             
                 {{-- Links --}}
                 @if ( $items->lastPage() !== 1 )
-                    <div class="rounded-xl overflow-hidden bg-white w-full flex items-center justify-between text-gray-600 shadow-xl mt-4">
+                    <div class="rounded-xl overflow-hidden bg-white w-full flex items-center justify-between text-gray-600 shadow-xl mt-4 ml-4">
                         
                         {{-- Left Arrow Button --}}
                         @if ( $items->currentPage() == 1 )

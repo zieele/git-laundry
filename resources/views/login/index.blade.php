@@ -53,7 +53,7 @@
         @stack('style')
     </head>
 
-    <body id="body">
+<body id="body">
         
         {{-- main content --}}
         <main class="w-screen h-screen" style="
@@ -63,7 +63,7 @@
             background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);">
                 <a href="/" id="ltext" class="text-white text-4xl m-8">Git-Laundry</a>
                 <div class="rounded-xl px-6 py-10 shadow-lg bg-blue-50">
-                    <form action="login" method="post">
+                    <form action="{{ route('login') }}" method="post">
                         @csrf
                         <table class="text-gray-600">   
                           <tr>

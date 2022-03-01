@@ -3,10 +3,23 @@
 
         {{-- sidebar header --}}
         <div class="flex items-center p-4 h-20 bg-gray-700 text-gray-200">
-            @if (auth()->role = 'admin')
+            {{-- @if (auth()->role = 'admin') --}}
                 <div class="h-12 w-12 bg-red-400 rounded-full mr-2"></div>
-                <span class="text-lg font-bold">Admin</span>
-            @elseif (auth()->role = 'kasir')
+                <span class="text-lg font-bold">
+                    {{-- @php
+                        dd(auth()->user());
+                    @endphp --}}
+                    {{-- @if (Auth()->user()->role = 'admin')
+                        admin
+                    @elseif (Auth()->user()->role = 'kasir')
+                        kasir
+                    @elseif (Auth()->user()->role = 'owner')
+                        owner
+                    @else
+                        guest
+                    @endif --}}
+                </span>
+            {{-- @elseif (auth()->role = 'kasir')
                 <div class="h-12 w-12 bg-yellow-400 rounded-full mr-2"></div>
                 <span class="text-lg font-bold">Kasir</span>
             @elseif (auth()->role = 'owner')
@@ -15,7 +28,7 @@
             @else
                 <div class="h-12 w-12 bg-gray-400 rounded-full mr-2"></div>
                 <span class="text-lg font-bold">Guest</span>
-            @endif
+            @endif --}}
             <button id="close-sidebar-btn" class="absolute right-4 text-3xl h-8 w-8 flex justify-center items-center rounded-full duration-700 transform -translate-x-8 rotate-90 lg:hidden">
                 <i class="fas fa-times"></i>
             </button>
@@ -62,12 +75,24 @@
                     <span class="font-semibold">Paket</span>
                 </a>
                 @endif
+
+                @if ($title == 'Daftar Barang')
+                <a class="bg-blue-200 lg:bg-blue-100 rounded-xl m-2 p-4 flex">
+                    <div class="w-8"><i class="fas fa-box"></i></div>
+                    <span class="font-semibold">Barang</span>
+                </a>
+                @else
+                <a href="barang" class="bg-blue-100 lg:bg-blue-50 rounded-xl m-2 p-4 flex hover:bg-blue-200 hover:lg:bg-blue-100 duration-100">
+                    <div class="w-8"><i class="fas fa-box"></i></div>
+                    <span class="font-semibold">Barang</span>
+                </a>
+                @endif
             </div>
 
             {{-- second category --}}
             <div class="mb-4">
                 <span class="font-bold text-xl ml-2">Category 2</span>
-                @if ($title == 'Transaksi')
+                @if ($title == 'Page Transaksi')
                 <a class="bg-blue-200 lg:bg-blue-100 rounded-xl m-2 p-4 flex">
                     <div class="w-8"><i class="fas fa-money-check-alt"></i></div>
                     <span class="font-semibold">Transaksi</span>

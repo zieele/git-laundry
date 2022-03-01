@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Outlet;
-use App\Http\Requests\StoreOutletRequest;
-use App\Http\Requests\UpdateOutletRequest;
+use App\Models\Barang;
+use App\Http\Requests\StoreBarangRequest;
+use App\Http\Requests\UpdateBarangRequest;
 
-class OutletController extends Controller
+class BarangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +15,9 @@ class OutletController extends Controller
      */
     public function index()
     {
-        return view('outlet.index', [
-            'title' => 'Daftar Outlet',
-            'items' => Outlet::latest()->paginate(8)
+        return view('barang.index', [
+            'title' => 'Daftar Barang',
+            'items' => Barang::latest()->paginate(8)
         ]);
     }
 
@@ -34,12 +34,12 @@ class OutletController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreOutletRequest  $request
+     * @param  \App\Http\Requests\StoreBarangRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreOutletRequest $request)
+    public function store(StoreBarangRequest $request)
     {
-        Outlet::create($request->all());
+        Barang::create($request->all());
 
         return redirect()->back()->with('success','Data Berhasil ditambahkan.');
     }
@@ -47,10 +47,10 @@ class OutletController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Outlet  $outlet
+     * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function show(Outlet $outlet)
+    public function show(Barang $barang)
     {
         //
     }
@@ -58,10 +58,10 @@ class OutletController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Outlet  $outlet
+     * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function edit(Outlet $outlet)
+    public function edit(Barang $barang)
     {
         //
     }
@@ -69,13 +69,13 @@ class OutletController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateOutletRequest  $request
-     * @param  \App\Models\Outlet  $outlet
+     * @param  \App\Http\Requests\UpdateBarangRequest  $request
+     * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateOutletRequest $request, Outlet $outlet)
+    public function update(UpdateBarangRequest $request, Barang $barang)
     {
-        $outlet->update($request->all());
+        $barang->update($request->all());
 
         return redirect()->back()->with('success','Data Berhasil diubah.');
     }
@@ -83,12 +83,12 @@ class OutletController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Outlet  $outlet
+     * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Outlet $outlet)
+    public function destroy(Barang $barang)
     {
-        $outlet->delete();
+        $barang->delete();
 
         return redirect()->back()->with('success','Data Berhasil dihapus.');
     }

@@ -11,18 +11,5 @@ class Transaksi extends Model
 
     protected $table = 'tb_transaksi';
 
-    protected $fillable = [
-        'id_outlet',
-        'kode_invoice',
-        'id_member',
-        'tgl',
-        'batas_waktuole',
-        'tgl_bayar',
-        'biaya_tambahan',
-        'diskon',
-        'pajak',
-        'status',
-        'lunas',
-        'id_user'
-    ];
+    protected $guarded = ['id', 'created_at', 'updated_at'];
 }
