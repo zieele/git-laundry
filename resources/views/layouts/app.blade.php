@@ -23,6 +23,15 @@
 
 <body class="w-full bg-blue-50">
 
+    @if ($message = Session::get('success'))
+        <div class="fixed w-full flex justify-center z-50">
+            <div class="px-4 py-2 bg-blue-50 font-semibold text-gray-600 rounded-xl border-2 border-gray-800 shadow-lg mt-2">
+                <span class="ml-1">{{ $message }}</span>
+                <button id="" type="button" class="text-xl rounded-full h-8 w-8 transform hover:rotate-90 duration-300"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+    @endif
+
     {{-- layouts --}}
     @include('layouts.header')
     @include('layouts.sidebar')

@@ -13,12 +13,6 @@
         @include('member.create')
         @include('layouts.tools')
     </div>
-    
-    @if ($message = Session::get('success'))
-        <div class="absolute flex justify-center px-4 py-3 ml-4 bg-green-200 text-green-400 rounded-xl border-2 border-green-400">
-            {{ $message }}
-        </div>
-    @endif
 
     {{-- Table --}}
     @if ($items->count() < 1)
