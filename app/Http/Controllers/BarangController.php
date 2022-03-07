@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Barang;
 use App\Http\Requests\StoreBarangRequest;
 use App\Http\Requests\UpdateBarangRequest;
+use Maatwebsite\Excel\Facades\Excel;
 
 class BarangController extends Controller
 {
@@ -17,6 +18,7 @@ class BarangController extends Controller
     {
         return view('barang.index', [
             'title' => 'Daftar Barang',
+            'export' => 'barang',
             'items' => Barang::latest()->paginate(8)
         ]);
     }
@@ -91,5 +93,11 @@ class BarangController extends Controller
         $barang->delete();
 
         return redirect()->back()->with('success','Data Berhasil dihapus.');
+    }
+    
+    public function export() 
+    {
+        $date = date('Y-m-d');
+        return Excel::download(new BarangController, $date.'_barang.xlsx');
     }
 }

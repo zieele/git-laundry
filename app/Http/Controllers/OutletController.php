@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\OutletExport;
 use App\Models\Outlet;
 use App\Http\Requests\StoreOutletRequest;
 use App\Http\Requests\UpdateOutletRequest;
+use App\Http\Controllers\Session;
+use App\Imports\OutletImport;
+use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Http\Request;
 
 class OutletController extends Controller
 {
@@ -17,6 +22,7 @@ class OutletController extends Controller
     {
         return view('outlet.index', [
             'title' => 'Daftar Outlet',
+            'export' => 'outlet',
             'items' => Outlet::latest()->paginate(8)
         ]);
     }
@@ -91,5 +97,20 @@ class OutletController extends Controller
         $outlet->delete();
 
         return redirect()->back()->with('success','Data Berhasil dihapus.');
+    }
+    
+    public function export() 
+    {
+        $date = date('Y-m-d');
+        return Excel::download(new OutletExport, $date.'_outlet.xlsx');
+    }
+    
+    public function import(Request $request) 
+    {
+		$file = $request->file('file');
+		$nama_file = rand().$file->getClientOriginalName();
+		$file->move('file',$nama_file);
+		Excel::import(new OutletImport, public_path('/file/'.$nama_file));
+		return redirect('/outlet');
     }
 }

@@ -44,3 +44,13 @@ Route::post('login', [LoginController::class, 'authenticate']);
 //     Route::resource('member', MemberController::class);
 //     Route::resource('paket', PaketController::class);
 // });
+
+Route::get('outlet/export/xls', [OutletController::class, 'export']);
+Route::get('paket/export/xls', [PaketController::class, 'export']);
+Route::get('member/export/xls', [MemberController::class, 'export']);
+Route::get('barang/export/xls', [BarangController::class, 'export']);
+
+Route::post('outlet/import/xls', [OutletController::class, 'import']);
+Route::post('paket/import/xls', [PaketController::class, 'import']);
+Route::post('member/import/xls', [MemberController::class, 'import']);
+Route::post('barang/import/xls', [BarangController::class, 'import']);

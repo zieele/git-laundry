@@ -2,11 +2,12 @@
 
 @section('content')
 
-    {{-- CRUD Modals --}}
+    {{-- Modals --}}
     @foreach ($items as $item)
         @include('outlet.update')
         @include('outlet.delete')
     @endforeach
+    @include('layouts.export')
 
     {{-- Heading --}}
     <div class="flex flex-col md:flex-row m-4 min-h-max">

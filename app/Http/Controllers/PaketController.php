@@ -6,6 +6,7 @@ use App\Models\Paket;
 use App\Http\Requests\StorePaketRequest;
 use App\Http\Requests\UpdatePaketRequest;
 use App\Models\Outlet;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PaketController extends Controller
 {
@@ -18,6 +19,7 @@ class PaketController extends Controller
     {
         return view('paket.index', [
             'title' => 'Daftar Paket',
+            'export' => 'paket',
             'items' => Paket::join('tb_outlet', 'tb_paket.id_outlet', '=', 'tb_outlet.id')->select('tb_paket.*', 'tb_outlet.nama')->latest()->paginate(8),
             'outlets' => Outlet::orderBy('nama')->get()
         ]);
@@ -93,5 +95,11 @@ class PaketController extends Controller
         $paket->delete();
 
         return redirect()->back()->with('success','Data Berhasil dihapus.');;
+    }
+    
+    public function export() 
+    {
+        $date = date('Y-m-d');
+        return Excel::download(new PaketController, $date.'_paket.xlsx');
     }
 }

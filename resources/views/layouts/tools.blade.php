@@ -9,15 +9,19 @@
 
         <div class="flex justify-evenly items-center w-full">
 
-            <button class="my-6 md:my-0 w-20 h-20 md:w-24 md:h-24 xl:w-32 xl:h-32 bg-green-400 flex flex-col items-center justify-center rounded-xl text-white hover:bg-green-300 duration-100" title="ga bisa di pake :D">
+            <button id="btn-export" class="my-6 md:my-0 w-20 h-20 md:w-24 md:h-24 xl:w-32 xl:h-32 bg-green-400 flex flex-col items-center justify-center rounded-xl text-white hover:bg-green-300 duration-100">
                 <span class="text-xl md:text-2xl xl:text-3xl"><i class="fas fa-upload"></i></span>
                 <span class="font-semibold text-sm md:text-md xl:text-lg">Export</span>
             </button>
 
-            <button class="my-6 md:my-0 w-20 h-20 md:w-24 md:h-24 xl:w-32 xl:h-32 bg-blue-400 flex flex-col items-center justify-center rounded-xl text-white hover:bg-blue-300 duration-100" title="ga bisa di pake :D">
-                <span class="text-xl md:text-2xl xl:text-3xl"><i class="fas fa-download"></i></span>
-                <span class="font-semibold text-sm md:text-md xl:text-lg">Import</span>
-            </button>
+            <form method="post" action="{{ $export }}/import/xls" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                <label for="file" onclick="document.getElementById('getFile').click()" class="my-6 md:my-0 w-20 h-20 md:w-24 md:h-24 xl:w-32 xl:h-32 bg-blue-400 flex flex-col items-center justify-center rounded-xl text-white hover:bg-blue-300 duration-100">
+                    <span class="text-xl md:text-2xl xl:text-3xl"><i class="fas fa-download"></i></span>
+                    <span class="font-semibold text-sm md:text-md xl:text-lg">Import</span>
+                </label>
+                <input id="getFile" type="file" class="hidden" name="file" required="required" onchange="form.submit()" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+            </form>
 
             <button class="my-6 md:my-0 w-20 h-20 md:w-24 md:h-24 xl:w-32 xl:h-32 bg-red-400 flex flex-col items-center justify-center rounded-xl text-white hover:bg-red-300 duration-100" title="ga bisa di pake :D">
                 <span class="text-xl md:text-2xl xl:text-3xl"><i class="fas fa-trash"></i></span>
@@ -92,21 +96,3 @@
         @endif
     </div>
 </div>
-
-{{-- @push('script')
-<script>
-    window.addEventListener('DOMContentLoaded', () =>{
-        const dot = document.querySelector('dot-search')
-
-        const onClick = () => {
-            sidebar.classList.toggle('-translate-x-full')
-            closeBtn.classList.toggle('rotate-90')
-            closeBtn.classList.toggle('-translate-x-8')
-            body.classList.toggle('overflow-y-hidden')
-        }
-        
-        sidebarBtn.addEventListener('click', toggleSidebar)
-        closeBtn.addEventListener('click', toggleSidebar)
-    })
-</script>
-@endpush --}}

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Member;
 use App\Http\Requests\StoreMemberRequest;
 use App\Http\Requests\UpdateMemberRequest;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MemberController extends Controller
 {
@@ -17,6 +18,7 @@ class MemberController extends Controller
     {
         return view('member.index', [
             'title' => 'Daftar Member',
+            'export' => 'member',
             'items' => Member::latest()->paginate(8)
         ]);
     }
@@ -91,5 +93,11 @@ class MemberController extends Controller
         $member->delete();
 
         return redirect()->back()->with('success','Data Berhasil dihapus.');
+    }
+    
+    public function export() 
+    {
+        $date = date('Y-m-d');
+        return Excel::download(new MemberController, $date.'_member.xlsx');
     }
 }
