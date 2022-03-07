@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlgorithmController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\HomeController;
@@ -54,3 +55,5 @@ Route::post('outlet/import/xls', [OutletController::class, 'import']);
 Route::post('paket/import/xls', [PaketController::class, 'import']);
 Route::post('member/import/xls', [MemberController::class, 'import']);
 Route::post('barang/import/xls', [BarangController::class, 'import']);
+
+Route::get('algorithm', [AlgorithmController::class, 'index']);

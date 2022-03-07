@@ -111,6 +111,6 @@ class OutletController extends Controller
 		$nama_file = rand().$file->getClientOriginalName();
 		$file->move('file',$nama_file);
 		Excel::import(new OutletImport, public_path('/file/'.$nama_file));
-		return redirect('/outlet');
+		return redirect('/outlet')->with('success','Data Berhasil diimoport.');
     }
 }

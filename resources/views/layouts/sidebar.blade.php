@@ -105,6 +105,22 @@
                 @endif
             </div>
 
+            {{-- third category --}}
+            <div class="mb-4">
+                <span class="font-bold text-xl ml-2">Category 3</span>
+                @if ($title == 'Algorithm')
+                <a class="bg-blue-200 lg:bg-blue-100 rounded-xl m-2 p-4 flex">
+                    <div class="w-8"><i class="fas fa-atom"></i></div>
+                    <span class="font-semibold">Simulasi</span>
+                </a>
+                @else
+                <a href="algorithm" class="bg-blue-100 lg:bg-blue-50 rounded-xl m-2 p-4 flex hover:bg-blue-200 hover:lg:bg-blue-100 duration-100">
+                    <div class="w-8"><i class="fas fa-atom"></i></div>
+                    <span class="font-semibold">Simulasi</span>
+                </a>
+                @endif
+            </div>
+
         </div>
 
         {{-- sidebar footer --}}
