@@ -184,8 +184,8 @@
                 let data = []
                 if(id >= 0)
                     data.push(dataSimulasi[id])
-                    console.log(id)
-                    console.log(data)
+                    // console.log(id)
+                    // console.log(data)
                 $('#tbl-simulasi tbody').html(showData(data))
             })
         })

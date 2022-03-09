@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Transaksi;
 use App\Http\Requests\StoreTransaksiRequest;
 use App\Http\Requests\UpdateTransaksiRequest;
+use App\Models\Member;
+use App\Models\Paket;
 
 class TransaksiController extends Controller
 {
@@ -15,10 +17,10 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        return view('transaksi.index', [
-            'title' => 'Page Transaksi',
-            'items' => Transaksi::latest()->paginate(8)
-        ]);
+        $data['member'] = Member::get();
+        $data['paket'] = Paket::get();
+        $data['title'] = 'Page Transaksi';
+        return view('transaksi.index')->with($data);
     }
 
     /**
@@ -39,7 +41,7 @@ class TransaksiController extends Controller
      */
     public function store(StoreTransaksiRequest $request)
     {
-        //
+        dd($request->request);
     }
 
     /**
