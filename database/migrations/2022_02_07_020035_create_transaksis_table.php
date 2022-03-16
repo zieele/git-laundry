@@ -21,7 +21,10 @@ class CreateTransaksisTable extends Migration
             $table->unsignedBigInteger('id_member');
             $table->foreign('id_member')->references('id')->on('tb_member');
             $table->dateTime('tgl');
-            $table->dateTime('batas_waktu');
+            // $table->dateTime('batas_waktu');
+            // $table->json('id_paket');
+            // $table->json('qty');
+            // $table->integer('bayar');
             $table->dateTime('tgl_bayar');
             $table->integer('biaya_tambahan');
             $table->double('diskon');

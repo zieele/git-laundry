@@ -29,6 +29,9 @@ class StoreTransaksiRequest extends FormRequest
             'id_member' => 'required',
             'tgl' => 'required',
             'batas_waktu' => 'required',
+            'id_paket' => 'required',
+            'qty' => 'required',
+            'bayar' => 'required'
             // 'tgl_bayar' => 'required',
             // 'biaya_tambahan' => 'required',
             // 'diskon' => 'required',

@@ -45,8 +45,10 @@
     @include('layouts.footer')
     
     {{-- js script --}}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script> --}}
+    <script src="{{asset('assets/jquery.js')}}"></script>
+    <script src="{{asset('assets/datatable.js')}}"></script>
     @stack('script')
 </body>
 </html>
