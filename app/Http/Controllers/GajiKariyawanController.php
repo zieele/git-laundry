@@ -15,7 +15,9 @@ class GajiKariyawanController extends Controller
      */
     public function index()
     {
-        //
+        return view('gaji.index', [
+            'title' => 'Gaji Karyawan'
+        ]);
     }
 
     /**

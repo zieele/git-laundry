@@ -18,7 +18,7 @@
             <div class="w-1/2 flex flex-col justify-around">
                 <div>
                     <button id="member-btn" class="px-3 py-2 rounded-md bg-blue-400 hover:bg-blue-300 duration-100 font-semibold text-white" type="button">
-                        <i class="fas fa-plus"></i><span class="ml-2">Tambah Member</span>
+                        <i class="fas fa-plus"></i><span class="ml-2">Pilih Member</span>
                     </button>
                 </div>
                 <div>

@@ -15,6 +15,12 @@ class CreateGajiKariyawansTable extends Migration
     {
         Schema::create('gaji_kariyawans', function (Blueprint $table) {
             $table->id();
+            $table->string('nama');
+            $table->enum('jenis_kelamin', ['L', 'P']);
+            $table->enum('status_menikah', ['single', 'couple']);
+            $table->integer('jumlah_anak');
+            $table->integer('gaji_awal');
+            $table->integer('gaji_tunjangan');
             $table->timestamps();
         });
     }
