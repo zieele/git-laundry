@@ -53,10 +53,10 @@
                     @foreach ($items as $item)
                     <tr class="h-12 text-center text-gray-700 {{ ( $loop->index%2 == 1) ? 'bg-blue-50' : '' }}">
                         <td>{{ ($items->currentpage()-1) * $items->perpage() + $loop->index + 1 }}.</td>
-                        <td>{{ $item->nama }}</td>
-                        <td>{{ $item->alamat }}</td>
+                        <td>{{ $item->nama_member }}</td>
+                        <td>{{ $item->alamat_member }}</td>
                         <td>{{ $item->jenis_kelamin }}</td>
-                        <td>{{ $item->tlp }}</td>
+                        <td>{{ $item->tlp_member }}</td>
                         <td style="user-select: none;">
                             <button id="update-btn-{{ $item->getKey() }}" class="font-semibold px-1 text-lg text-green-400 hover:text-green-300 duration-100">
                                 <i class="fas fa-edit"></i>

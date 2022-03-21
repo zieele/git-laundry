@@ -91,16 +91,27 @@
 
             {{-- second category --}}
             <div class="mb-4">
-                <span class="font-bold text-xl ml-2">Category 2</span>
+                <span class="font-bold text-xl ml-2">Transaksi</span>
                 @if ($title == 'Page Transaksi')
                 <a class="bg-blue-200 lg:bg-blue-100 rounded-xl m-2 p-4 flex">
                     <div class="w-8"><i class="fas fa-money-check-alt"></i></div>
-                    <span class="font-semibold">Transaksi</span>
+                    <span class="font-semibold">Input Data</span>
                 </a>
                 @else
                 <a href="transaksi" class="bg-blue-100 lg:bg-blue-50 rounded-xl m-2 p-4 flex hover:bg-blue-200 hover:lg:bg-blue-100 duration-100">
                     <div class="w-8"><i class="fas fa-money-check-alt"></i></div>
-                    <span class="font-semibold">Transaksi</span>
+                    <span class="font-semibold">Input Data</span>
+                </a>
+                @endif
+                @if ($title == 'Page Penjemputan')
+                <a class="bg-blue-200 lg:bg-blue-100 rounded-xl m-2 p-4 flex">
+                    <div class="w-8"><i class="fas fa-money-check-alt"></i></div>
+                    <span class="font-semibold">Penjemputan</span>
+                </a>
+                @else
+                <a href="penjemputan" class="bg-blue-100 lg:bg-blue-50 rounded-xl m-2 p-4 flex hover:bg-blue-200 hover:lg:bg-blue-100 duration-100">
+                    <div class="w-8"><i class="fas fa-money-check-alt"></i></div>
+                    <span class="font-semibold">Penjemputan</span>
                 </a>
                 @endif
             </div>

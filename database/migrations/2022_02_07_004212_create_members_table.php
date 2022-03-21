@@ -15,10 +15,10 @@ class CreateMembersTable extends Migration
     {
         Schema::create('tb_member', function (Blueprint $table) {
             $table->id();
-            $table->string('nama', 200);
-            $table->text('alamat');
+            $table->string('nama_member', 200);
+            $table->text('alamat_member');
             $table->enum('jenis_kelamin', ['L', 'P']);
-            $table->string('tlp', 16);
+            $table->string('tlp_member', 16);
             $table->timestamps();
         });
     }

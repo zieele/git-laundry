@@ -7,7 +7,7 @@
                 <span id="label-modal" class="ml-2 font-bold text-2xl">Pilih Pelanggan</span>
             </div>
             {{-- modal content --}}
-            <table id="tbl-member" class="">
+            <table id="tbl-member">
                 <thead>
                     <tr>
                         <th>No.</th>
@@ -25,10 +25,10 @@
                                 {{ $loop->index+1 }}.
                                 <input type="hidden" name="id_member" id="id_member" class="member-id" value="{{ $item->id }}">
                             </td>
-                            <td>{{ $item->nama }}</td>
+                            <td>{{ $item->nama_member }}</td>
                             <td>{{ $item->jenis_kelamin }}</td>
-                            <td>{{ $item->tlp }}</td>
-                            <td>{{ $item->alamat }}</td>
+                            <td>{{ $item->tlp_member }}</td>
+                            <td>{{ $item->alamat_member }}</td>
                             <td>
                                 <button type="button" class="btn-select-member hover:bg-gray-200 duration-100 h-10 w-10 rounded-full font-semibold"><i class="fas fa-check"></i></button>
                             </td>

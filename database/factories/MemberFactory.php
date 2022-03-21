@@ -14,10 +14,10 @@ class MemberFactory extends Factory
     public function definition()
     {
         return [
-            'nama' => $this->faker->name(),
-            'alamat' => $this->faker->streetAddress(),
+            'nama_member' => $this->faker->name(),
+            'alamat_member' => $this->faker->streetAddress(),
             'jenis_kelamin' => $this->faker->randomElement(['L', 'P']),
-            'tlp' => $this->faker->e164PhoneNumber()
+            'tlp_member' => $this->faker->e164PhoneNumber()
         ];
     }
 }

@@ -65,19 +65,17 @@ class TransaksiController extends Controller
             ]);
         }
 
-        // dd($input_transaksi->id);
-
         foreach($request->id_paket as $i => $v){
             $input_detail = DetailTransaksi::create([
-                'id_transaksi' => '36',
+                'id_transaksi' => $input_transaksi->id,
                 'id_paket' => $request->id_paket[$i],
                 'qty' => $request->qty[$i],
                 'keterangan' => ''
-            ]);
+            ]);   
         }
 
         // dd($request->request);
-        // return redirect()->back()->with('success', 'Berhasil Input');
+        return redirect()->back()->with('success', 'Berhasil Input');
     }
 
 

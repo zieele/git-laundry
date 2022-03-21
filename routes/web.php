@@ -10,6 +10,7 @@ use App\Http\Controllers\OutletController;
 use App\Http\Controllers\PaketController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\GajiKariyawanController;
+use App\Http\Controllers\PenjemputanController;
 use App\Http\Middleware\Authenticate;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,7 @@ Route::resource('outlet', OutletController::class);
 Route::resource('member', MemberController::class);
 Route::resource('paket', PaketController::class);
 Route::resource('barang', BarangController::class);
+Route::resource('penjemputan', PenjemputanController::class);
 
 Route::resource('transaksi', TransaksiController::class);
 Route::resource('gaji_karyawan', GajiKariyawanController::class);
@@ -49,13 +51,9 @@ Route::post('login', [LoginController::class, 'authenticate']);
 // });
 
 Route::get('outlet/export/xls', [OutletController::class, 'export']);
-Route::get('paket/export/xls', [PaketController::class, 'export']);
-Route::get('member/export/xls', [MemberController::class, 'export']);
-Route::get('barang/export/xls', [BarangController::class, 'export']);
+Route::get('penjemputan/export/xls', [PenjemputanController::class, 'export']);
 
 Route::post('outlet/import/xls', [OutletController::class, 'import']);
-Route::post('paket/import/xls', [PaketController::class, 'import']);
-Route::post('member/import/xls', [MemberController::class, 'import']);
-Route::post('barang/import/xls', [BarangController::class, 'import']);
+Route::post('penjemputan/import/xls', [PenjemputanController::class, 'import']);
 
 Route::get('algorithm', [AlgorithmController::class, 'index']);
