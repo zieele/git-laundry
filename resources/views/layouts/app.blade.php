@@ -109,6 +109,7 @@
 				</script>
 			@endpush
 		@endif
+		
 		@if($errors->any())
 			@foreach ($errors->all() as $message)
 				<div id="err{{ $loop }}" class="px-4 py-2 bg-red-100 font-semibold text-stone-600 rounded-xl border-2 border-stone-600 shadow-lg mt-2">
