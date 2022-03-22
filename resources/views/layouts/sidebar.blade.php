@@ -39,7 +39,7 @@
 
             {{-- first category --}}
             <div class="mb-4">
-                <span class="font-bold text-xl ml-2">Category 1</span>
+                <span class="font-bold text-xl ml-2">CRUD</span>
                 @if ($title == 'Daftar Outlet')
                 <a class="bg-blue-200 lg:bg-blue-100 rounded-xl m-2 p-4 flex">
                     <div class="w-8"><i class="fas fa-plus"></i></div>
@@ -118,7 +118,7 @@
 
             {{-- third category --}}
             <div class="mb-4">
-                <span class="font-bold text-xl ml-2">Category 3</span>
+                <span class="font-bold text-xl ml-2">Algoritma</span>
                 @if ($title == 'Algorithm')
                 <a class="bg-blue-200 lg:bg-blue-100 rounded-xl m-2 p-4 flex">
                     <div class="w-8"><i class="fas fa-atom"></i></div>
@@ -146,13 +146,13 @@
         </div>
 
         {{-- sidebar footer --}}
-        <div class="flex items-center p-4 bg-gray-700 text-gray-200 lg:hidden">
+        {{-- <div class="flex items-center p-4 bg-gray-700 text-gray-200 lg:hidden">
             <span class="font-semibold"><i class="fas fa-sign-out-alt"></i> Login</span>
             <form action="logout" method="post">
                 @csrf
                 <button type="submit" class="font-semibold"><i class="fas fa-sign-out-alt"></i> Logout</button>
             </form>
-        </div>
+        </div> --}}
     </div>
 </div>
 

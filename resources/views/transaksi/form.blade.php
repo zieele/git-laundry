@@ -115,7 +115,9 @@
                             <td rowspan="4" class="flex flex-col">
                                 <label for="bayar">Pembayaran</label>
                                 <input value="1000" type="text" name="bayar" id="bayar" value="0" onkeypress="return num(event)">
-                                <button     type="submit">Bayar</button>
+                                <button id="paket-btn" class="px-3 py-2 rounded-md bg-blue-400 hover:bg-blue-300 duration-100 font-semibold text-white" type="submit">
+                                    <span class="ml-2">Bayar</span>
+                                </button>
                             </td>
                         </tr>
                         <tr>

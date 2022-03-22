@@ -7,9 +7,9 @@
     @else
     <a href="/" id="ltext" class="text-blue-50 text-2xl">Git-Laundry</a>
     @endif
-    <a href="login" class="font-semibold text-blue-50 text-lg absolute right-6 hidden lg:block"><i class="fas fa-sign-out-alt"></i> Log In</a>
+    {{-- <a href="login" class="font-semibold text-blue-50 text-lg absolute right-6 hidden lg:block"><i class="fas fa-sign-out-alt"></i> Log In</a>
     <form action="logout" method="post" class="absolute right-32 hidden lg:block">
         @csrf
         <button type="submit" class="font-semibold text-blue-50 text-lg"><i class="fas fa-sign-out-alt"></i> Log Out</button>
-    </form>
+    </form> --}}
 </div>
